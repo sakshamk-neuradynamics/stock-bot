@@ -1,0 +1,1181 @@
+{
+  "files": {
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Advertising Intangibles.pdf": {
+      "vs_file_id": "file-DVgnNhVMJCmQLpQhsBATcb",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "8bb5cba9eb3b0736f3067fce0abb7acc635dad0b3fe1a1d592fc558566cc5c47",
+      "size": 89406,
+      "mtime": 1759752832,
+      "filename": "Advertising Intangibles.pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/1 INSTRUCTIONS/Week 1 Module 1 Instructions.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 112446,
+      "mtime": 1759752826,
+      "filename": "Week 1 Module 1 Instructions.png"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Asset Value Template (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 29163,
+      "mtime": 1759752832,
+      "filename": "Asset Value Template (1).xlsx"
+    },
+    "BOOKS/COMPETITION DEMYSTIFIED.pdf": {
+      "vs_file_id": "file-K44MRqFfajeAUD6nFBzkbL",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "cfaab721bd7c773871ed354d13f7f495c6af2256ce8cea7f3e7ba3ace586396b",
+      "size": 3258972,
+      "mtime": 1759754366,
+      "filename": "COMPETITION DEMYSTIFIED.pdf"
+    },
+    "BOOKS/value-investing-from-graham-to-buffet-and-beyond-9780471381983-0471381985-9780471463399-0471463396.pdf": {
+      "vs_file_id": "file-XxwFCuUqUiFxFtMQ34UzbD",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "c9831aaac1e1ced8c895660f0c9ee2ba04979d8e458140b6908db4be0e867431",
+      "size": 4490465,
+      "mtime": 1759754087,
+      "filename": "value-investing-from-graham-to-buffet-and-beyond-9780471381983-0471381985-9780471463399-0471463396.pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Buffett Case on Dempster Mill_Asset Value Calc..pdf": {
+      "vs_file_id": "file-BJYyP3BerAVg7bGoUaGLjT",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "4022b0a81a421b597d7f826168a45afdacd52acdcc7bbb8cb2bd1dcf0e773d3a",
+      "size": 239932,
+      "mtime": 1759752832,
+      "filename": "Buffett Case on Dempster Mill_Asset Value Calc..pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Annual_Report_Walmart_2017.pdf": {
+      "vs_file_id": "file-Krv9YjoCrUAYxei5puserS",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "a716d8a12c913ec69b2343a1dba761dea88fbfff36e7785ebe09869740eb4b0c",
+      "size": 3060765,
+      "mtime": 1759752832,
+      "filename": "Annual_Report_Walmart_2017.pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Greenwald Basic Structure of Investment Process & Valuation.pdf": {
+      "vs_file_id": "file-ArWSpu1bmLKmzoLH58bGFG",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752832,
+      "filename": "Greenwald Basic Structure of Investment Process & Valuation.pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Columbia_Value Investing_Module 1_Week Summaries.pdf": {
+      "vs_file_id": "file-GbyRiHST7HyrA5pYJHgG5o",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "48b1382adbd13dd82d414bd591d0ac892b06bd736f57e293cdd5a4e24d3a6faf",
+      "size": 1662155,
+      "mtime": 1759752832,
+      "filename": "Columbia_Value Investing_Module 1_Week Summaries.pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Intangible Assets_Measurement, Valuation, and Implications_Baruch Lev_2003.pdf": {
+      "vs_file_id": "file-4hrAApPDMmstFMMbLWtTZa",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "1f89fd7871d8d6624ab301bd17269a475758380380b5338bcb70d3fe802127fb",
+      "size": 474534,
+      "mtime": 1759752832,
+      "filename": "Intangible Assets_Measurement, Valuation, and Implications_Baruch Lev_2003.pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Module 1 Resources.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 111623,
+      "mtime": 1759752832,
+      "filename": "Module 1 Resources.png"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/The Asset Value of Advertising.pdf": {
+      "vs_file_id": "file-MCGjnuRzbt7Fq9dvwVqiFy",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "6f0ecb834cab0ee16503bd6657c032a4d225511519a8f3e96f31033f515bdf5e",
+      "size": 58630,
+      "mtime": 1759752832,
+      "filename": "The Asset Value of Advertising.pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Value Investing Framework_Resource-1 (5).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752832,
+      "filename": "Value Investing Framework_Resource-1 (5).xlsx"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/WMT (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 117819,
+      "mtime": 1759752832,
+      "filename": "WMT (1).xlsx"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Intangible Assets Concepts and Measurements_Baruch Lev (1).pdf": {
+      "vs_file_id": "file-Bm98yKQp8P4k72LKnHp2Kh",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "b5fe45b8dec53dba123a5236c40d8f61d5fdae7881b778e24b2aee282b8fe68a",
+      "size": 8055707,
+      "mtime": 1759752832,
+      "filename": "Intangible Assets Concepts and Measurements_Baruch Lev (1).pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/2 RESOURCES/Intangible Assets Concepts and Measurements_Baruch Lev.pdf": {
+      "vs_file_id": "file-ULqTjdDjktnuNcXtzNpyob",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "b5fe45b8dec53dba123a5236c40d8f61d5fdae7881b778e24b2aee282b8fe68a",
+      "size": 8055707,
+      "mtime": 1759752832,
+      "filename": "Intangible Assets Concepts and Measurements_Baruch Lev.pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/1 INSTRUCTIONS/Module 2 Instructions.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 152232,
+      "mtime": 1759752832,
+      "filename": "Module 2 Instructions.png"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/1 INSTRUCTIONS/Columbia_Value Investing_Module 2_Week Summaries (1).pdf": {
+      "vs_file_id": "file-37WsTGBubZHuwixd72KUs8",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5edf1f8aa2edcf71eef29d95172dd98b09a63c50d78f571a98b00cae5112d8ca",
+      "size": 2121354,
+      "mtime": 1759752832,
+      "filename": "Columbia_Value Investing_Module 2_Week Summaries (1).pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (5).pdf": {
+      "vs_file_id": "file-EVU7Me92wjc7XpgwGrtYcU",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752832,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (5).pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/How to Model Reversion to the Mean 9.17.13 (2).pdf": {
+      "vs_file_id": "file-WQcPa9b4XmZ48wVacRRfWW",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5b270255c99e6527224a26e1faaf76b67eecaa329564ec813a49a68594a33997",
+      "size": 930390,
+      "mtime": 1759752832,
+      "filename": "How to Model Reversion to the Mean 9.17.13 (2).pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/Mauboussin-on-Valuation 1.14.05 (2).pdf": {
+      "vs_file_id": "file-BCaNTDirJ2xWMNe95SjvEw",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5453052e2182f0680d85f092d9933770862388d2282927e9188627d3b7977b81",
+      "size": 290605,
+      "mtime": 1759752832,
+      "filename": "Mauboussin-on-Valuation 1.14.05 (2).pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/Module 2 Resources.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 104792,
+      "mtime": 1759752832,
+      "filename": "Module 2 Resources.png"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/MS PE Ratios_4.23.18.pdf": {
+      "vs_file_id": "file-SNw91fNdTs5QZwHBDsKPjt",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "b915edb040f9a578e2bf84ea22aef1af5dc7624932092ae1dd775206152f4dbb",
+      "size": 705741,
+      "mtime": 1759752832,
+      "filename": "MS PE Ratios_4.23.18.pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/ROIC 6.4.15 (2).pdf": {
+      "vs_file_id": "file-CL2j59QTVKq8S3Z7Vo5HPC",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "3a9a1e2444131718a50f9c2cc13ee0e103caec6d061fd95b071c19273b6fefb5",
+      "size": 659718,
+      "mtime": 1759752832,
+      "filename": "ROIC 6.4.15 (2).pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/The Base Rate Book 5.4.15 (1).pdf": {
+      "vs_file_id": "file-7j7SrY4Hwoyy9N1ivjxmM5",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "2d0571ebbb2c392f77986db1c48cc6f6353acf9be9cd83bd4ddc6f24327ad30b",
+      "size": 1253605,
+      "mtime": 1759752832,
+      "filename": "The Base Rate Book 5.4.15 (1).pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/Value Investing Framework_Resource-1 (6).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752832,
+      "filename": "Value Investing Framework_Resource-1 (6).xlsx"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/TheImportanceofExpectations 8.21.12 (1).pdf": {
+      "vs_file_id": "file-99Qs8un42P4p37RnxMpyrh",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "e500a8b6366e1180554e7c3a6e5f8e7d7ba2ac44206fa22b72b9dee36debb6d6",
+      "size": 769405,
+      "mtime": 1759752832,
+      "filename": "TheImportanceofExpectations 8.21.12 (1).pdf"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/WMT (2).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 116192,
+      "mtime": 1759752832,
+      "filename": "WMT (2).xlsx"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/2 RESOURCES/What does a Price Multiple Mean 1.29.14 (1).pdf": {
+      "vs_file_id": "file-8CQqwHpJSwzw82emjhUVo9",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "05551aea968517772b7dd71e384dc24ef003a64e11180ef8b063f04abb12fbd2",
+      "size": 770177,
+      "mtime": 1759752832,
+      "filename": "What does a Price Multiple Mean 1.29.14 (1).pdf"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/1 INSTRUCTIONS/.Module Instructions and Resources.docx": {
+      "vs_file_id": "file-MLYzuTSUtqs32m84ztwUHe",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "3ced292f1210fbca33d0b9884ed02e243e39749470c07427b4630862253abaa4",
+      "size": 214347,
+      "mtime": 1759752836,
+      "filename": ".Module Instructions and Resources.docx"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/1 INSTRUCTIONS/Annual_Report_Intel_2017.pdf": {
+      "vs_file_id": "file-Dqjyzc1AurvoeV2NzyNgWX",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "a7b32fa3758f8cd8e68516d756c80336dbd0b1c984fb7c237ea6a4b4ac90d9a5",
+      "size": 1323402,
+      "mtime": 1759752836,
+      "filename": "Annual_Report_Intel_2017.pdf"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/1 INSTRUCTIONS/Columbia_Value Investing_Module 3_Week Summaries.pdf": {
+      "vs_file_id": "file-1yRDuD64CYbr8Wpt4PkuRE",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "083d0b18364394e7056167300fbce2040993e971ca071d8f3663f76988a29ed0",
+      "size": 2050496,
+      "mtime": 1759752836,
+      "filename": "Columbia_Value Investing_Module 3_Week Summaries.pdf"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/2 RESOURCES/ExploringNetworkEconomicsRevised 10.11.04.pdf": {
+      "vs_file_id": "file-VJBvJfYp6QpGZNrd8AoBBV",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "22fc2b4fc4fa6dcab4596093702540b9335be246fbbc38777473b4d6bd5fb5b1",
+      "size": 980495,
+      "mtime": 1759752836,
+      "filename": "ExploringNetworkEconomicsRevised 10.11.04.pdf"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/2 RESOURCES/Greenwald_s Roadmap.pdf": {
+      "vs_file_id": "file-X5vcJAa2DEwszZabaGB1LJ",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "3f4755030c263b2e441857e853afbeb5a0fa9809499126555cb31a3a0d5252f9",
+      "size": 40409,
+      "mtime": 1759752835,
+      "filename": "Greenwald_s Roadmap.pdf"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation.pdf": {
+      "vs_file_id": "file-3UYaoZm5qV2hLTLzWKZtPG",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752835,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation.pdf"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/2 RESOURCES/Porter_s Five Forces Chart.pdf": {
+      "vs_file_id": "file-PmR8Vobv4cW9QZeToBgmcu",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "ee9f7ee98695a04ffb459be88eb7aee0eed28cf2db6b2c88093298cddd156e90",
+      "size": 84432,
+      "mtime": 1759752835,
+      "filename": "Porter_s Five Forces Chart.pdf"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/2 RESOURCES/Measuring the Moat 7.22.13.pdf": {
+      "vs_file_id": "file-XeHhLeyjJihzUV4zKqUTRS",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "05c44d9910dfb2b4fa1685ca99e860c7fc46db5f26738ee43971ffc03acc7841",
+      "size": 1804384,
+      "mtime": 1759752836,
+      "filename": "Measuring the Moat 7.22.13.pdf"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/2 RESOURCES/Value Investing Framework_Resource-1.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752835,
+      "filename": "Value Investing Framework_Resource-1.xlsx"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/2 RESOURCES/Sources of Moats.pdf": {
+      "vs_file_id": "file-Mrqy81WH1mVL9UG3qsr5Kp",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "435b258231f3051cc969efd27fdd359e2c42feb504a66ff38caa477a3ee8eee0",
+      "size": 1062901,
+      "mtime": 1759752836,
+      "filename": "Sources of Moats.pdf"
+    },
+    "COLUMBIA/WEEK 4 (MAGNA INTERNATIONAL CASE STUDY)/1 INSTRUCTIONS/.Week 4 Module instruction and resources.docx": {
+      "vs_file_id": "file-GzhGVPYWe3H9RKLjsa4fih",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "e2d3d97cc4273858726c84057b0cb009b0ee0edb519de96aaa4b42168c1b5821",
+      "size": 184127,
+      "mtime": 1759752836,
+      "filename": ".Week 4 Module instruction and resources.docx"
+    },
+    "COLUMBIA/WEEK 4 (MAGNA INTERNATIONAL CASE STUDY)/1 INSTRUCTIONS/Annual_Report_Magna_International_2008.pdf": {
+      "vs_file_id": "file-8x1nB5JbpAti6WbHhtXFcA",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "ca0363096394ba9b7154a045ea6354286434e9d7cbd5170aac8e91368b4a8253",
+      "size": 3029809,
+      "mtime": 1759752836,
+      "filename": "Annual_Report_Magna_International_2008.pdf"
+    },
+    "COLUMBIA/WEEK 4 (MAGNA INTERNATIONAL CASE STUDY)/1 INSTRUCTIONS/Columbia_Value Investing_Module 4_Week Summaries.pdf": {
+      "vs_file_id": "file-KdBvQU8vBCqQ1ka3jCCrZ3",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5565dfdc8b0a805d3176d24b11a41052064c2e1bfe602fc5493b232b4a46b91d",
+      "size": 1072124,
+      "mtime": 1759752836,
+      "filename": "Columbia_Value Investing_Module 4_Week Summaries.pdf"
+    },
+    "COLUMBIA/WEEK 4 (MAGNA INTERNATIONAL CASE STUDY)/1 INSTRUCTIONS/MG.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 114478,
+      "mtime": 1759752836,
+      "filename": "MG.xlsx"
+    },
+    "COLUMBIA/WEEK 4 (MAGNA INTERNATIONAL CASE STUDY)/2 RESOURCES/Asset Value Template.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 29165,
+      "mtime": 1759752836,
+      "filename": "Asset Value Template.xlsx"
+    },
+    "COLUMBIA/WEEK 4 (MAGNA INTERNATIONAL CASE STUDY)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (1).pdf": {
+      "vs_file_id": "file-Nfex4y1H3BxpMJFsT1MxJp",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752836,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (1).pdf"
+    },
+    "COLUMBIA/WEEK 4 (MAGNA INTERNATIONAL CASE STUDY)/2 RESOURCES/Value Investing Framework_Resource-1 (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752836,
+      "filename": "Value Investing Framework_Resource-1 (1).xlsx"
+    },
+    "COLUMBIA/WEEK 4 (MAGNA INTERNATIONAL CASE STUDY)/3 VIDEO/Video_004.mp4": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'Invalid extension mp4. Supported formats: \"c\", \"cpp\", \"cs\", \"css\", \"csv\", \"doc\", \"docx\", \"gif\", \"go\", \"html\", \"java\", \"jpeg\", \"jpg\", \"js\", \"json\", \"md\", \"pdf\", \"php\", \"pkl\", \"png\", \"pptx\", \"py\", \"rb\", \"tar\", \"tex\", \"ts\", \"txt\", \"webp\", \"xlsx\", \"xml\", \"zip\"', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 281072942,
+      "mtime": 1759752789,
+      "filename": "Video_004.mp4"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/1 INSTRUCTIONS/Annual_Report_Walmart_2017 (1).pdf": {
+      "vs_file_id": "file-2AMiKERWvd6PCUYygAKbDg",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "a716d8a12c913ec69b2343a1dba761dea88fbfff36e7785ebe09869740eb4b0c",
+      "size": 3060765,
+      "mtime": 1759752835,
+      "filename": "Annual_Report_Walmart_2017 (1).pdf"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/1 INSTRUCTIONS/Columbia_Value Investing_Module 5_Week Summaries.pdf": {
+      "vs_file_id": "file-RFom7V6r8Wr4QDMdiJGiMU",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "79769c255a85bb50e27f48d2580bcdc342a84c4a9eaad952be60c618ae07c49a",
+      "size": 1976837,
+      "mtime": 1759752835,
+      "filename": "Columbia_Value Investing_Module 5_Week Summaries.pdf"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/1 INSTRUCTIONS/Week 5 - Instructions.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 107807,
+      "mtime": 1759752835,
+      "filename": "Week 5 - Instructions.png"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/Asset Value Template.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 29165,
+      "mtime": 1759752835,
+      "filename": "Asset Value Template.xlsx"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/Competitive Advantage Period 1.14.97.pdf": {
+      "vs_file_id": "file-BzJNFdc2PBepR5CSNtDGbA",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "41a9d00390176f5d9e7a6093f234d0e8c7733ccc5097316e42dfe1579323c454",
+      "size": 163858,
+      "mtime": 1759752835,
+      "filename": "Competitive Advantage Period 1.14.97.pdf"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (1).pdf": {
+      "vs_file_id": "file-DRm3PW8JDMRhrmffxmJo2i",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752835,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (1).pdf"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (2).pdf": {
+      "vs_file_id": "file-TXw1wXVVP1F22jJDMgVNVX",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752835,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (2).pdf"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/How to Model Reversion to the Mean 9.17.13.pdf": {
+      "vs_file_id": "file-7b5EFBFGVhyNyVva9Ri1KQ",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5b270255c99e6527224a26e1faaf76b67eecaa329564ec813a49a68594a33997",
+      "size": 930390,
+      "mtime": 1759752835,
+      "filename": "How to Model Reversion to the Mean 9.17.13.pdf"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/Mauboussin-on-Valuation 1.14.05.pdf": {
+      "vs_file_id": "file-WR9MMMGJYv4ynQDUqy8Ez8",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5453052e2182f0680d85f092d9933770862388d2282927e9188627d3b7977b81",
+      "size": 290605,
+      "mtime": 1759752835,
+      "filename": "Mauboussin-on-Valuation 1.14.05.pdf"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/MG.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 114478,
+      "mtime": 1759752835,
+      "filename": "MG.xlsx"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/ROIC 6.4.15.pdf": {
+      "vs_file_id": "file-BkHQDjzajfPj7oBzfP8Rwx",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "3a9a1e2444131718a50f9c2cc13ee0e103caec6d061fd95b071c19273b6fefb5",
+      "size": 659718,
+      "mtime": 1759752835,
+      "filename": "ROIC 6.4.15.pdf"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/Value Investing Framework_Resource-1 (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752835,
+      "filename": "Value Investing Framework_Resource-1 (1).xlsx"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/Value Investing Framework_Resource-1 (2).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752835,
+      "filename": "Value Investing Framework_Resource-1 (2).xlsx"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/Week 5 Resources.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 80684,
+      "mtime": 1759752835,
+      "filename": "Week 5 Resources.png"
+    },
+    "COLUMBIA/WEEK 5 (GROWTH AND VALUE)/2 RESOURCES/WMT.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 116190,
+      "mtime": 1759752835,
+      "filename": "WMT.xlsx"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/1 INSTRUCTIONS/.Week 4 Module instruction and resources.docx": {
+      "vs_file_id": "file-9oiGnfjXqAECca9hUuC5rC",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "e2d3d97cc4273858726c84057b0cb009b0ee0edb519de96aaa4b42168c1b5821",
+      "size": 184127,
+      "mtime": 1759752835,
+      "filename": ".Week 4 Module instruction and resources.docx"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/1 INSTRUCTIONS/AMZN (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 120353,
+      "mtime": 1759752835,
+      "filename": "AMZN (1).xlsx"
+    },
+    "COLUMBIA/WEEK 2 (EARNINGS POWER VALUE)/3 VIDEO/2023-03-01_20-24-01-639.mp4": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'Invalid extension mp4. Supported formats: \"c\", \"cpp\", \"css\", \"csv\", \"doc\", \"docx\", \"gif\", \"go\", \"html\", \"java\", \"jpeg\", \"jpg\", \"js\", \"json\", \"md\", \"pdf\", \"php\", \"pkl\", \"png\", \"pptx\", \"py\", \"rb\", \"tar\", \"tex\", \"ts\", \"txt\", \"webp\", \"xlsx\", \"xml\", \"zip\"', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 378012294,
+      "mtime": 1759752835,
+      "filename": "2023-03-01_20-24-01-639.mp4"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/1 INSTRUCTIONS/Annual_Report_Amazon_2016.pdf": {
+      "vs_file_id": "file-KLGhkroadfzPb9EC1k3Kt8",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "13580cb5c7a071e28979fc96d4d80e042b911b6148e4597c56d166c36d5cdb5c",
+      "size": 875436,
+      "mtime": 1759752835,
+      "filename": "Annual_Report_Amazon_2016.pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/1 INSTRUCTIONS/Module Instructions Week 6.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 136485,
+      "mtime": 1759752835,
+      "filename": "Module Instructions Week 6.png"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/1 INSTRUCTIONS/Columbia_Value Investing_Module 6_Week Summaries.pdf": {
+      "vs_file_id": "file-HzrxMVZJPwmx2bs4Rimnq2",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "155dfe9e82ad0f25c18251be5951a7c3180a2974d35d1af352bda18e00bf8ad6",
+      "size": 2896198,
+      "mtime": 1759752835,
+      "filename": "Columbia_Value Investing_Module 6_Week Summaries.pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/AMZN.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 118717,
+      "mtime": 1759752835,
+      "filename": "AMZN.xlsx"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Asset Value Template.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 29165,
+      "mtime": 1759752835,
+      "filename": "Asset Value Template.xlsx"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Competitive Advantage Period 1.14.97 (1).pdf": {
+      "vs_file_id": "file-BydE87uTroFCxHNPTdP8D8",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "41a9d00390176f5d9e7a6093f234d0e8c7733ccc5097316e42dfe1579323c454",
+      "size": 163858,
+      "mtime": 1759752835,
+      "filename": "Competitive Advantage Period 1.14.97 (1).pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (1).pdf": {
+      "vs_file_id": "file-VGfv6tXYnwbMyj8d6Tuhcz",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752835,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (1).pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (3).pdf": {
+      "vs_file_id": "file-Xiw4kSzqmHmZ36F1ZQAYWY",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752835,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (3).pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Greenwald_Investing in Growth Stocks.pdf": {
+      "vs_file_id": "file-28iwDnVTeMSdhc8oQA5Mi4",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "87b9f405b78c04e5c75bb8b1dc865b0eb1b59df54c07fe1f89963c58b5434b35",
+      "size": 351424,
+      "mtime": 1759752835,
+      "filename": "Greenwald_Investing in Growth Stocks.pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/How to Model Reversion to the Mean 9.17.13 (1).pdf": {
+      "vs_file_id": "file-EGcyeGt7w1pmhAHrrSccjw",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5b270255c99e6527224a26e1faaf76b67eecaa329564ec813a49a68594a33997",
+      "size": 930390,
+      "mtime": 1759752835,
+      "filename": "How to Model Reversion to the Mean 9.17.13 (1).pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Mauboussin-on-Valuation 1.14.05 (1).pdf": {
+      "vs_file_id": "file-HzPVFh6E4aJJUKdjGUytMw",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5453052e2182f0680d85f092d9933770862388d2282927e9188627d3b7977b81",
+      "size": 290605,
+      "mtime": 1759752835,
+      "filename": "Mauboussin-on-Valuation 1.14.05 (1).pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/MG.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 114478,
+      "mtime": 1759752835,
+      "filename": "MG.xlsx"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Module Resources week 6.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 96289,
+      "mtime": 1759752835,
+      "filename": "Module Resources week 6.png"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/ROIC 6.4.15 (1).pdf": {
+      "vs_file_id": "file-CeLVWZRu2nH8jZq3CRcPsy",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "3a9a1e2444131718a50f9c2cc13ee0e103caec6d061fd95b071c19273b6fefb5",
+      "size": 659718,
+      "mtime": 1759752835,
+      "filename": "ROIC 6.4.15 (1).pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Sources of Value & Returns_LC.pdf": {
+      "vs_file_id": "file-QcthLbt5EmnAbsbj5B3rxt",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "99bb18f8ffa0503cc8a261efcd291e2c85cda8ddfcefc626a841d2e14988b3a1",
+      "size": 117835,
+      "mtime": 1759752835,
+      "filename": "Sources of Value & Returns_LC.pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/The Base Rate Book 5.4.15.pdf": {
+      "vs_file_id": "file-25anT75TE2Ae8XRLEA9E8F",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "2d0571ebbb2c392f77986db1c48cc6f6353acf9be9cd83bd4ddc6f24327ad30b",
+      "size": 1253605,
+      "mtime": 1759752835,
+      "filename": "The Base Rate Book 5.4.15.pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/TheImportanceofExpectations 8.21.12.pdf": {
+      "vs_file_id": "file-5WVQ9Lw89XRYSxFbYb2JGS",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "e500a8b6366e1180554e7c3a6e5f8e7d7ba2ac44206fa22b72b9dee36debb6d6",
+      "size": 769405,
+      "mtime": 1759752835,
+      "filename": "TheImportanceofExpectations 8.21.12.pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Value Investing Framework_Resource-1 (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752835,
+      "filename": "Value Investing Framework_Resource-1 (1).xlsx"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/Total Addressable Market 9.1.15.pdf": {
+      "vs_file_id": "file-42C3t7Cw5JpsxReNW1VenL",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "58b968e77f2cb8417e7b82348c3bb05dc9e12d365bbbf9f5ad8f1f89d5c4683f",
+      "size": 947189,
+      "mtime": 1759752835,
+      "filename": "Total Addressable Market 9.1.15.pdf"
+    },
+    "COLUMBIA/WEEK 6 (AMAZON CASE STUDY)/2 RESOURCES/What does a Price Multiple Mean 1.29.14.pdf": {
+      "vs_file_id": "file-3x1pb1SN1oMJJ9Rjo6rNtL",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "05551aea968517772b7dd71e384dc24ef003a64e11180ef8b063f04abb12fbd2",
+      "size": 770177,
+      "mtime": 1759752835,
+      "filename": "What does a Price Multiple Mean 1.29.14.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/1 INSTRUCTIONS/FER (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 120359,
+      "mtime": 1759752835,
+      "filename": "FER (1).xlsx"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/1 INSTRUCTIONS/Columbia_Value Investing_Module 7_Week Summaries.pdf": {
+      "vs_file_id": "file-6FgN7rXf6SHBuwCTmbPEdb",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "5d5fab691771c97e8f82ae27b6c04d93f5755f2a079c6ed486f290a626bfad7c",
+      "size": 3265260,
+      "mtime": 1759752835,
+      "filename": "Columbia_Value Investing_Module 7_Week Summaries.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/1 INSTRUCTIONS/Module 7 Instructions.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 105831,
+      "mtime": 1759752835,
+      "filename": "Module 7 Instructions.png"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Asset Value Template.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 29165,
+      "mtime": 1759752835,
+      "filename": "Asset Value Template.xlsx"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Beta vs. Margin of Safety 8.3.01.pdf": {
+      "vs_file_id": "file-WmTMAoH3NMt9BgbMyonkZ9",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "85e32dab054f8bc3a0e5f01ea8cba629e692e2e87cecb908e332a0e5f8caddf9",
+      "size": 145398,
+      "mtime": 1759752835,
+      "filename": "Beta vs. Margin of Safety 8.3.01.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Building an Effective Team 1.8.14.pdf": {
+      "vs_file_id": "file-2jDsJ2nXETV1pT2fLAFAYS",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "beadd4cdc91756915d9f2c2a1a4ef334af77e20ebf48687a8446cf5a856f62ad",
+      "size": 825139,
+      "mtime": 1759752835,
+      "filename": "Building an Effective Team 1.8.14.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/FER.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 117255,
+      "mtime": 1759752835,
+      "filename": "FER.xlsx"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Freestyle Chess - Fundamental & Quant Analysis 9.10.14.pdf": {
+      "vs_file_id": "file-AcWngGRmFPqtLCVdUt3PWP",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "30c412d6c8a8c8d880710a755653635d0658b51493d99d7cc6916abb2d764357",
+      "size": 413112,
+      "mtime": 1759752835,
+      "filename": "Freestyle Chess - Fundamental & Quant Analysis 9.10.14.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (1).pdf": {
+      "vs_file_id": "file-LHhHH8d1hzh5qCW8fqadRw",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752835,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (1).pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Improving Decisions 2.24.14.pdf": {
+      "vs_file_id": "file-GZhruKqanb9AomwPru5Jad",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "7624afd9230b72651cfac82bf217c28e5a6400cf8ef6740d12a8a5a27b64c708",
+      "size": 607116,
+      "mtime": 1759752835,
+      "filename": "Improving Decisions 2.24.14.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/IQ vs. RQ 5.12.15.pdf": {
+      "vs_file_id": "file-CjRDJmGAvvvz52EhrAo6zX",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "e8febc22ef8eda154670f1f34e64654ca23f80946ce933ad8cc52a89ca518d2f",
+      "size": 605058,
+      "mtime": 1759752835,
+      "filename": "IQ vs. RQ 5.12.15.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Kelly Criterion 2.1.06.pdf": {
+      "vs_file_id": "file-WjemUhsWTVppB4dAfGQS7j",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "0eceb6e3e59533502add27e6174cfa6beff1e3efb9fea528fff33600eefb0114",
+      "size": 105879,
+      "mtime": 1759752835,
+      "filename": "Kelly Criterion 2.1.06.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/LessIsMore-ACaseForConcentrated_LazardInvestmentFocus.pdf": {
+      "vs_file_id": "file-5s5jPUgms7Lp7mFXX3hmWM",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "4fd24cad42f5727a0522ea15b38e4ab3c06ec72bda3e8b6129cd3ee3e2428940",
+      "size": 260883,
+      "mtime": 1759752835,
+      "filename": "LessIsMore-ACaseForConcentrated_LazardInvestmentFocus.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Man Overboard - Informed Decisions after Large Price Drop 1.15.15.pdf": {
+      "vs_file_id": "file-CTtcvMav9GZTMn8JWT44og",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "2f43c9793b0f891fd2c0049615788362ba62fb5cd2e7e165f14f2cd46f330869",
+      "size": 836990,
+      "mtime": 1759752835,
+      "filename": "Man Overboard - Informed Decisions after Large Price Drop 1.15.15.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Mauboussin_Whats going on in your brain 10.20.15.pdf": {
+      "vs_file_id": "file-537U7RnELQwVqoA8ScSgkS",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "800496e8c32e3254bc2478a3ad27134076769ec3f2fac05db12b91902084f16e",
+      "size": 462370,
+      "mtime": 1759752835,
+      "filename": "Mauboussin_Whats going on in your brain 10.20.15.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/MG.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 114478,
+      "mtime": 1759752835,
+      "filename": "MG.xlsx"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Module 7 Resources.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 81547,
+      "mtime": 1759752835,
+      "filename": "Module 7 Resources.png"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Outcome Bias - Luck vs. Skill 8.15.13.pdf": {
+      "vs_file_id": "file-1cQcxBiZJ5QKt8FYhxgjwx",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "84981f9cca43c0a6f9b27ed30651eb5873858ec29e50f473652675a583795002",
+      "size": 533202,
+      "mtime": 1759752835,
+      "filename": "Outcome Bias - Luck vs. Skill 8.15.13.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Superforecasters - Mauboussin 9.28.15.pdf": {
+      "vs_file_id": "file-7hoZsRfTm7ihLWTLxj3dbL",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "4d40baf53238fd1ec99da4ec6311413369cf32db0c47808bcd9e5a142c7d75a2",
+      "size": 570515,
+      "mtime": 1759752835,
+      "filename": "Superforecasters - Mauboussin 9.28.15.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Short Termism - Questionin the Premise 9.18.14.pdf": {
+      "vs_file_id": "file-MkWAyfjMPzpQuEjPk965fN",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "8fa8cf4d4f857a0ee12251fffdb72bae99fee54cdc4811b5f9cf53def6717f84",
+      "size": 725171,
+      "mtime": 1759752835,
+      "filename": "Short Termism - Questionin the Premise 9.18.14.pdf"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Value Investing Framework_Resource-1 (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752835,
+      "filename": "Value Investing Framework_Resource-1 (1).xlsx"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Value Investing Framework_Resource-1 (3).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752835,
+      "filename": "Value Investing Framework_Resource-1 (3).xlsx"
+    },
+    "COLUMBIA/WEEK 7 (RISK MANAGEMENT)/2 RESOURCES/Tversky_Kahneman_1974 (Paper that changed Richard Thaler_s life).pdf": {
+      "vs_file_id": "file-Tv928B658FeJwxPXvmYF9W",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "4a9ad1820b41d0644b082e68ba429c824ac197620fb619caf54849a911f93dff",
+      "size": 2230462,
+      "mtime": 1759752835,
+      "filename": "Tversky_Kahneman_1974 (Paper that changed Richard Thaler_s life).pdf"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/1 INSTRUCTIONS/Annual_Report_Deere_2016.pdf": {
+      "vs_file_id": "file-BvQwF7XLuZx3eKdA2kwerf",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "82cedd80f554c148e1b467ff31925c54e7584ca706ee3d670fc7784bcf4f55e0",
+      "size": 1556930,
+      "mtime": 1759752826,
+      "filename": "Annual_Report_Deere_2016.pdf"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/1 INSTRUCTIONS/DE (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 123219,
+      "mtime": 1759752826,
+      "filename": "DE (1).xlsx"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/1 INSTRUCTIONS/Week 8 Module Instructions.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 165219,
+      "mtime": 1759752826,
+      "filename": "Week 8 Module Instructions.png"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/1 INSTRUCTIONS/Columbia_Value Investing_Module 8_Week Summaries.pdf": {
+      "vs_file_id": "file-3E7PQqc7NrQzqqu3Pe44Qd",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "59694a6649e18adffd3c73a6e87e4a991176c347a60e3c57fd25c18f06eb15c8",
+      "size": 3820719,
+      "mtime": 1759752826,
+      "filename": "Columbia_Value Investing_Module 8_Week Summaries.pdf"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/Asset Value Template.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 29165,
+      "mtime": 1759752826,
+      "filename": "Asset Value Template.xlsx"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (1).pdf": {
+      "vs_file_id": "file-SHt8u8giraP7jSCoVkD4aT",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752826,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (1).pdf"
+    },
+    "COLUMBIA/WEEK 1 (INTRODUCTION)/3 VIDEOS/Module 1.mp4": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'Invalid extension mp4. Supported formats: \"c\", \"cpp\", \"css\", \"csv\", \"doc\", \"docx\", \"gif\", \"go\", \"html\", \"java\", \"jpeg\", \"jpg\", \"js\", \"json\", \"md\", \"pdf\", \"php\", \"pkl\", \"png\", \"pptx\", \"py\", \"rb\", \"tar\", \"tex\", \"ts\", \"txt\", \"webp\", \"xlsx\", \"xml\", \"zip\"', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 471754180,
+      "mtime": 1759752793,
+      "filename": "Module 1.mp4"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/Greenwald_Basic Structure of Investment Process & Valuation (4).pdf": {
+      "vs_file_id": "file-AhGtPVnX4MBdKDEV7wqrbz",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "de8f85b9d503149ceeb71b4ed5b2090bf711346f31e49294a28c36c40b783b17",
+      "size": 478719,
+      "mtime": 1759752826,
+      "filename": "Greenwald_Basic Structure of Investment Process & Valuation (4).pdf"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/Graham _ Doddsville_Issue 33_v23.pdf": {
+      "vs_file_id": "file-R7xhERpYwXKLYCzJcGsWzG",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "43d40962d81e58fd075708d22b3455ed5080ddeca50872613d843c93df9ff4d8",
+      "size": 5050636,
+      "mtime": 1759752826,
+      "filename": "Graham _ Doddsville_Issue 33_v23.pdf"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/MG.xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 114478,
+      "mtime": 1759752826,
+      "filename": "MG.xlsx"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/Value Investing Framework_Resource-1 (1).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752826,
+      "filename": "Value Investing Framework_Resource-1 (1).xlsx"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/Greenwald_Investing in Growth Stocks (1).pdf": {
+      "vs_file_id": "file-D5NzGGjuH7L8ejqir5LAZ7",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "87b9f405b78c04e5c75bb8b1dc865b0eb1b59df54c07fe1f89963c58b5434b35",
+      "size": 351424,
+      "mtime": 1759752826,
+      "filename": "Greenwald_Investing in Growth Stocks (1).pdf"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/Week 8 Module Resources.png": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 70909,
+      "mtime": 1759752826,
+      "filename": "Week 8 Module Resources.png"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY 2008.pdf": {
+      "vs_file_id": "file-CVqpsoxp4QcsYizSbeLfFV",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "068fdb659d05d86ebe53756b0742bb1ab3b8ea45d0b6e3e82bf10255e569a9eb",
+      "size": 126398,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY 2008.pdf"
+    },
+    "COLUMBIA/WEEK 8 (JOHN DEERE CASE STUDY)/2 RESOURCES/Value Investing Framework_Resource-1 (4).xlsx": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'File type not supported', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 65250,
+      "mtime": 1759752826,
+      "filename": "Value Investing Framework_Resource-1 (4).xlsx"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2006.pdf": {
+      "vs_file_id": "file-SE1gFXVpqoLTFjf7WeYSyM",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "be7d960b353ed418439222ce8f6f58b83701ac4a4c1111ac03baf1291167ec6a",
+      "size": 152475,
+      "mtime": 1759752820,
+      "filename": "BERKSHIRE HATHAWAY INC 2006.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 1.pdf": {
+      "vs_file_id": "file-QRGgve4i9MBLeMfUdWWXn4",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "c84b29937c8a0483bce5335fcb9a5172b81cc87ea7972d0f50a5925b1a5b0798",
+      "size": 425985,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 1.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2005.pdf": {
+      "vs_file_id": "file-SyM8RwRZnfvXvp9qr2zvWc",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "005d1bd3df39a5b79c7908fd7cb22e2d00f8bffb3a5fe6d38366229b7952cfc5",
+      "size": 353666,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2005.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2007.pdf": {
+      "vs_file_id": "file-APaTV7T7iLuuKHyH96hZuX",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "e038ac335eaea0a765b2309f53f0ddcefe587a252ac05e53eaa4322daff61664",
+      "size": 136235,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2007.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2009.pdf": {
+      "vs_file_id": "file-8YdXQzSRQAVvkKVtFcoKGg",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "7b48916a4ddf437c1fa9ed1daf6aef779f30fdc7aa28dd0beaa1f1aaab104399",
+      "size": 117250,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2009.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2010.pdf": {
+      "vs_file_id": "file-EdWs3E5sPd74H8pGE6TsBU",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "44a2b4bca7afb9a89a4b8468b73f97e722a89b5c2aaea6174735d307d753f40f",
+      "size": 310522,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2010.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2011.pdf": {
+      "vs_file_id": "file-VkA2upiGs3D2eNRe6JFcao",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "611dbde58e6d4bbb44819a05170f780af0e3891655adbc733cf2d0fb8a8c9832",
+      "size": 132529,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2011.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2012.pdf": {
+      "vs_file_id": "file-QQneKwmrPNmEuhB7e5W3cc",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "51f31e659fdfe829af5ca509977b85e00f946240fc80976d3b75c671950e9d21",
+      "size": 139391,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2012.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2013.pdf": {
+      "vs_file_id": "file-Ej7DaBGk93XLTJpZU7bskt",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "1575f78ca53cc1f5516c7876e233f86ac8a16a067a86a7624d894b1ce0e1b5a7",
+      "size": 261267,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2013.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2016.pdf": {
+      "vs_file_id": "file-VbJ94PWLHX3FPdTBjShAtr",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "7f6ba81974f116a85eb69dcd0c61fd55a757b4760f74d424f3d6ed0548303f62",
+      "size": 167668,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2016.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2014.pdf": {
+      "vs_file_id": "file-Dm5wkc9uDztiVLgAz7TvA5",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "60dcd04d460fb82c69588e7ed71f4233d6229ef78b3779e4494ef37ce164b3e3",
+      "size": 365506,
+      "mtime": 1759752820,
+      "filename": "BERKSHIRE HATHAWAY INC 2014.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2017.pdf": {
+      "vs_file_id": "file-Sk4EkDVHvfBaxmFCDHPNg2",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "843c454e71d7a1b12e534582e810bc626d3b8795cfa62f9ad070bb09b5a402d7",
+      "size": 86915,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2017.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2018.pdf": {
+      "vs_file_id": "file-JthSrWKskResZjAnkwMfqP",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "9fafc625797eb0467ec8f753e52911aa3ba80a9ca4c2b308a929d137f7308940",
+      "size": 80583,
+      "mtime": 1759752820,
+      "filename": "BERKSHIRE HATHAWAY INC 2018.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2015.pdf": {
+      "vs_file_id": "file-4cJQt1Y2xV58jbJxahgy8p",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "d9931d5b2da0ae62868550798888329a61c54f662e944ba85aadbfa2c1028cc0",
+      "size": 2445311,
+      "mtime": 1759752797,
+      "filename": "BERKSHIRE HATHAWAY INC 2015.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2020.pdf": {
+      "vs_file_id": "file-QYGeNwRkGBs121z2XFnJrJ",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "98593d20da7dcc1cdaefde82d88b1441f901485da0aa1258c6edba95c2d27832",
+      "size": 76219,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2020.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2021.pdf": {
+      "vs_file_id": "file-CKMfu8byzcBM16wKdbMvuB",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "86c091834b19822e2bc6e351a1d5ac4b7baa8c1df706c58cc6fb60b836e177e8",
+      "size": 62762,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2021.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2019.pdf": {
+      "vs_file_id": "file-WBdCTNSRgAi5sE26F1M7vW",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "82bd85c310bc8fa3abd209c12e68db8d16f96894283bdb4af69fe1f2cf72f892",
+      "size": 74970,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2019.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2023.pdf": {
+      "vs_file_id": "file-G7g13MnwmjK2gU4V7jY5zp",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "4853e74b377f3ab8a17056b75c25f1159e03fe4f22f80c4aa5786f85f0da5688",
+      "size": 121931,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2023.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2022.pdf": {
+      "vs_file_id": "file-R3twBpDAcX4QWinXRKnqV3",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "76697c9c34f17ea525be1ec9be00f8d12fee3e8ac1126995a688c56f6a29f3a4",
+      "size": 53016,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2022.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC 2024.pdf": {
+      "vs_file_id": "file-29wz4XEjYDhmTUvWWbJQ9u",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "7dea4c94164205b951cc0f90c020efd0d83118d35ded9d3e0bc8b8908bf2eae7",
+      "size": 63175,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC 2024.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC.pdf": {
+      "vs_file_id": "file-PrGP8Fjo8onqUYjMGP3SyU",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "881ff65ace8e803b9461b37f12351e42fdd968f70be11ef3e3cbc88e324a0100",
+      "size": 182366,
+      "mtime": 1759752819,
+      "filename": "BERKSHIRE HATHAWAY INC.pdf"
+    },
+    "SHAREHOLDERS LETTERS/WARREN E.pdf": {
+      "vs_file_id": "file-LZhX44vnvaBWYcZmrcV2PN",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "360f6e5849673cfe536edde4b0d0bf8678a711943a1161dac4f9100cb4b2016a",
+      "size": 676977,
+      "mtime": 1759752819,
+      "filename": "WARREN E.pdf"
+    },
+    "SHAREHOLDERS LETTERS/BERKSHIRE HATHAWAY INC.docx": {
+      "vs_file_id": "file-YBtDf7htudY9cWmT8Afzn6",
+      "vs_id": "vs_68e3d8eca11c8191b09bfe964a2b80fe",
+      "sha256": "f7d120bd3831d17b0d96eb2d84fea4cb2701bc9561ca06df965498e71a371742",
+      "size": 1034791,
+      "mtime": 1759752820,
+      "filename": "BERKSHIRE HATHAWAY INC.docx"
+    },
+    "COLUMBIA/WEEK 3 (STRATEGIC ANALYSIS)/3 VIDEO/Video_003.mp4": {
+      "skipped_unsupported": true,
+      "reason": "bad_request_unsupported",
+      "error": "Error code: 400 - {'error': {'message': 'Invalid extension mp4. Supported formats: \"c\", \"cpp\", \"css\", \"csv\", \"doc\", \"docx\", \"gif\", \"go\", \"html\", \"java\", \"jpeg\", \"jpg\", \"js\", \"json\", \"md\", \"pdf\", \"php\", \"pkl\", \"png\", \"pptx\", \"py\", \"rb\", \"tar\", \"tex\", \"ts\", \"txt\", \"webp\", \"xlsx\", \"xml\", \"zip\"', 'type': 'invalid_request_error', 'param': None, 'code': None}}",
+      "size": 523809319,
+      "mtime": 1759752797,
+      "filename": "Video_003.mp4"
+    }
+  },
+  "last_updated": 1759765706
+}
