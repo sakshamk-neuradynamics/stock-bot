@@ -1,0 +1,2 @@
+Cash pile subagent:\n- Track cash/financial assets and returns over 6 years.\n- Save treasury/financial_assets_returns_6y.csv.\n
+

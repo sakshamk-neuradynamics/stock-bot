@@ -1,0 +1,2 @@
+Asset-specific notes subagent:\n- Summarize other securities, associates, land/buildings, pensions, other debt.\n- Save to assets/*.md.\n
+

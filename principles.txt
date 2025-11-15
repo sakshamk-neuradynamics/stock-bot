@@ -1,0 +1,88 @@
+Principle: Capital Allocation Discipline
+Rationale: Buffett prioritizes retaining earnings and reinvesting them into the business or acquiring new businesses over paying dividends or buybacks, aiming to enhance intrinsic value and maintain liquidity to act decisively in downturns.
+Signals: Strong cash flows; high ROE from existing operations; consistent earnings retention; successful bolt-on acquisitions; stock trading below intrinsic value; strong balance sheet; history of prudent capital allocation; consistent cash reserves above $20B.
+Quant Criteria: Maintain at least $20B in cash equivalents; prioritize projects with expected ROI ≥ 12%; repurchase shares only when trading below intrinsic value (ideally ≥ 20% discount) or at ≤ 110% of book value.
+If-Then Rules: IF reinvestment opportunities yield ROI ≥ 12% THEN prioritize reinvestment over dividends; IF cash reserves > $20B AND stock price < intrinsic value THEN consider share repurchase; IF share price < 0.8 x intrinsic value THEN consider repurchase; IF cash reserves fall below $20B THEN prioritize cash generation strategies; IF investment opportunities exceed expected returns from current operations THEN allocate capital accordingly.
+Checklist: 
+1) Assess current cash reserves and liquidity needs. 
+2) Review earnings retention and cash flow generation. 
+3) Evaluate intrinsic value of shares and repurchase economics. 
+4) Analyze past capital allocation (reinvestment, acquisitions, buybacks). 
+5) Identify reinvestment/acquisition opportunities and model expected ROI. 
+6) Ensure operational needs are funded before allocating excess capital.
+Pitfalls: Overpaying for acquisitions or repurchases; failing to maintain adequate liquidity; prioritizing short-term shareholder returns over long-term value; overestimating reinvestment potential; ignoring market conditions that affect acquisition prices.
+Examples: Berkshire’s acquisition of GEICO focused on long-term growth; share repurchases undertaken when shares were undervalued (e.g., at or below 110% of book value).
+
+Principle: Valuation Discipline
+Rationale: Emphasizing a margin of safety by buying below intrinsic value reduces downside risk and supports superior long-term returns.
+Signals: Stocks trading at significant discounts to intrinsic value; P/E ratios below historical or industry averages; strong competitive advantages; consistent earnings and cash flow.
+Quant Criteria: Target margin of safety ≥ 30% (intrinsic value ≥ 1.3 x price), with stricter screens at intrinsic value ≥ 1.5 x price; P/E < 15 (≤ 20 for growth companies); price-to-book < 1.5.
+If-Then Rules: IF intrinsic value is calculated and price is ≥ 30% below intrinsic value THEN proceed to purchase; IF P/E < 15 AND company has a strong moat THEN proceed to deep-dive analysis; IF P/E > 20 THEN avoid unless justified by exceptional growth prospects.
+Checklist: 
+1) Calculate intrinsic value using conservative DCF/earnings power. 
+2) Compare current price to intrinsic value. 
+3) Assess the margin of safety. 
+4) Review historical price trends, earnings, and future growth prospects. 
+5) Evaluate financial health and competitive position. 
+6) Monitor market conditions that may affect valuation.
+Pitfalls: Overestimating intrinsic value; relying on market hype or sentiment; failing to account for changing conditions; overpaying for growth.
+Examples: Coca‑Cola purchased when undervalued relative to intrinsic value; See’s Candy valued on brand strength and cash flows, bought at a sensible price.
+
+Principle: Quality and Moat Preference
+Rationale: Investing in companies with durable competitive advantages and capable, shareholder‑oriented management supports sustainable profitability and lower risk.
+Signals: Strong brand recognition and pricing power; low-cost production; consistent revenue and earnings growth; proven management track record; strong corporate culture and alignment; low leverage; customer loyalty.
+Quant Criteria: ROE ≥ 15%; consistent earnings growth over 5–10 years; low debt-to-equity (target < 0.5); management ownership ≥ 10%.
+If-Then Rules: IF a company demonstrates a strong moat AND capable management THEN prioritize for investment; IF management has a history of sound capital allocation THEN consider investment; IF management lacks a shareholder‑oriented approach THEN avoid.
+Checklist: 
+1) Analyze competitive position, market share, and threats. 
+2) Evaluate management’s track record, integrity, and capital allocation. 
+3) Assess financial metrics (ROE, margins, debt levels). 
+4) Review customer loyalty and brand strength. 
+5) Determine sustainability of advantages and industry dynamics.
+Pitfalls: Investing without a clear competitive advantage; overreliance on a single product/market; poor or misaligned management; overlooking corporate culture.
+Examples: American Express for brand and customer loyalty; GEICO’s growth under capable management and strong competitive position.
+
+Principle: Long-Term Time Horizon and Portfolio Construction
+Rationale: A long-term approach enables compounding and reduces the impact of short-term volatility; concentrating in high-quality businesses improves focus and potential returns.
+Signals: Stable earnings and multi‑year growth records; strong market position and brand loyalty; management committed to long-term strategies; market volatility creating buying opportunities.
+Quant Criteria: Aim for a minimum holding period of 5–10 years; maintain a focused portfolio of roughly 20–30 positions.
+If-Then Rules: IF a company has strong fundamentals and long-term growth potential THEN hold for the long term; IF market conditions are volatile BUT fundamentals remain strong THEN avoid panic selling; IF quality companies experience significant price drops THEN consider increasing positions; IF investment horizon is less than 5 years THEN reassess strategy.
+Checklist: 
+1) Identify high‑conviction, quality businesses with long-term growth potential. 
+2) Assess sustainability of competitive advantages. 
+3) Review historical performance over 5–10 years and resilience to downturns. 
+4) Size positions by conviction within a concentrated portfolio. 
+5) Monitor fundamentals over time rather than reacting to quarterly noise. 6) Reassess the thesis periodically.
+Pitfalls: Over‑diversification that dilutes returns; reacting to short‑term fluctuations; selling during downturns; focusing on short‑term gains.
+Examples: Long‑term holdings in Coca‑Cola and American Express delivering substantial returns over decades.
+
+Principle: Risk Management
+Rationale: Focusing on downside protection, leverage control, and liquidity helps mitigate permanent capital loss and withstand economic shocks.
+Signals: Low debt levels and strong cash reserves; stable earnings and cash flows; diversified revenue; exposure to cyclical industries; signs of financial distress or high volatility.
+Quant Criteria: Debt‑to‑equity < 0.5 for investments; maintain debt below 30% of total capital.
+If-Then Rules: IF a company has high leverage AND operates in a cyclical industry THEN approach with caution; IF a company has high debt or unstable earnings/cash flow THEN reconsider or avoid; IF potential downturns are signaled THEN increase cash reserves; IF potential downside risks are identified THEN reassess the investment.
+Checklist: 
+1) Analyze leverage and repayment capacity. 
+2) Review cash flow stability and liquidity. 
+3) Evaluate industry cyclicality and macroeconomic risks. 
+4) Assess diversification of revenue sources. 
+5) Examine performance during past downturns. 
+6) Diversify holdings to mitigate specific risks.
+Pitfalls: Underestimating leverage’s impact; relying on external financing; ignoring macro indicators; underestimating permanent loss risk.
+Examples: Berkshire’s conservative balance sheet and cash position enabling action during 2008; investments in utilities like MidAmerican for stable cash flows and manageable debt.
+
+Principle: Process and Research
+Rationale: A disciplined, systematic research process with thorough analysis and openness to disconfirming evidence leads to better investment decisions.
+Signals: Comprehensive financial analysis and due diligence; structured investment thesis; management interviews; industry research; use of checklists; continuous learning.
+Quant Criteria: Develop and use a standardized checklist for evaluating investments.
+If-Then Rules: IF a company passes initial screening criteria THEN conduct deeper due diligence; IF new information contradicts the investment thesis THEN re‑evaluate the position.
+Checklist: 
+1) Gather financial statements and key metrics. 
+2) Conduct qualitative analysis of the business model and management. 
+3) Perform quantitative analysis (ratios, valuation). 
+4) Review industry trends and competitive landscape. 
+5) Calculate intrinsic value and margin of safety. 
+6) Interview management and/or industry experts as available. 
+7) Prepare a written thesis and seek disconfirming evidence.
+Pitfalls: Relying on incomplete information or confirmation bias; gut‑driven decisions; failing to update research with new data.
+Examples: Rigorous analysis preceding the GEICO acquisition; detailed review of Iscar before acquisition.

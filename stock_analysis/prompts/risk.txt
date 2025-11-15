@@ -1,0 +1,4 @@
+Risk subagent:\n- Identify accounting red flags, concentration, cyclicality, regulatory/FX, capital allocation risks.\n- Cross-check against fundamentals and filings; save to notes/risks.md.\n
+
+Custom principles for risk evaluation:\n\n{{VALUE_INVESTING_PRINCIPLES}}\n\nRules:\n- Use If-Then Rules and Checklist to score risks; call out Pitfalls explicitly.\n- Map Signals to concrete red flags; tie to citations.\n- Resolve contradictions in favor of primary sources; document rationale.
+

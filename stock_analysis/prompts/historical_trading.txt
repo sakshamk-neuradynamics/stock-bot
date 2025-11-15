@@ -1,0 +1,2 @@
+Historical trading subagent:\n- Compile who bought/sold and when, with holdings.\n- Save to trades/trading_history.csv.\n
+

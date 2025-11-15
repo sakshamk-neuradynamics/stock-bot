@@ -1,0 +1,4 @@
+Writer:\n- Produce report/report.md from the template, inserting tables and ASCII figures.\n- Ensure citations are included for all claims. No images.\n
+
+Include an explicit rubric referencing the custom principles; summarize how each principle is satisfied or not:\n\n{{VALUE_INVESTING_PRINCIPLES}}\n\nRules:\n- Use Checklist to structure the rubric section.\n- If a principle contradicts primary evidence, document the conflict and decision.
+

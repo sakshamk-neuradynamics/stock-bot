@@ -1,0 +1,4 @@
+Divisions subagent:\n- Extract divisions, product/geography mix, and trends from filings.\n- Save textual pies and 6-year tables to divisions/.\n
+
+Custom principles for structure/quality commentary:\n\n{{VALUE_INVESTING_PRINCIPLES}}\n\nRules:\n- Use Signals and Examples to frame moat/decline narratives (with citations elsewhere).\n- Apply Quant Criteria to multi‑year divisional trends (volume/turnover/EBIT).
+

@@ -1,0 +1,4 @@
+Valuation subagent:\n- Build SOP, downside/base/upside cases, IRRs, exit timing multiples.\n- Implement liquidation model with haircuts and liabilities, and buyout/rights-issue scenarios.\n- Save CSVs to valuation/, liquidation/, exit/, buyout/.\n
+
+Custom principles to constrain assumptions and thresholds:\n\n{{VALUE_INVESTING_PRINCIPLES}}\n\nRules:\n- Use Quant Criteria and If-Then Rules to set discount rates, growth, margins, haircuts, and exit multiples.\n- Use Checklist to ensure all required tables are produced.\n- Use Examples to sanity‑check scenario construction (not as evidence).
+

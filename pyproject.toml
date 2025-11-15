@@ -17,4 +17,8 @@ dependencies = [
     "fpdf2>=2.7.9",
     "deepagents>=0.2.6",
     "langchain-mcp-adapters>=0.1.13",
+    "playwright>=1.56.0",
+    "lxml>=6.0.2",
+    "beautifulsoup4>=4.14.2",
+    "langchain-tavily>=0.2.13",
 ]

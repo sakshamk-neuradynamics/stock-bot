@@ -1,0 +1,2 @@
+Management subagent:\n- Summarize key managers and involvement/side activities.\n- Save to management/manager_summaries.md.\n
+

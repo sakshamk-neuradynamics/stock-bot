@@ -1,0 +1,2 @@
+Family dynamics subagent:\n- Build ASCII family tree and share distribution notes.\n- Save to family/family_tree.txt and family/share_distribution.md.\n
+

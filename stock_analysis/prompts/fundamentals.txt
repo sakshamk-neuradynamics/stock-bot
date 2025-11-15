@@ -1,0 +1,8 @@
+Fundamentals subagent:\n- Use Alpha Vantage fundamentals.\n- Produce normalized financials over 5–10 years where available.\n- Save to sources/alpha_vantage/*.json and derived tables under cashflow/ or valuation/.\n
+
+Custom principles to apply when selecting metrics and thresholds:
+
+{{VALUE_INVESTING_PRINCIPLES}}
+
+Rules:\n- Prefer Quant Criteria and If-Then Rules to set metric thresholds (e.g., leverage, margins, FCF).\n- Use Checklist items to ensure coverage (years, segments, restatements, currency normalization).\n- Note deviations from principles with citations and rationale.
+

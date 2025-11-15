@@ -1,0 +1,2 @@
+Board subagent:\n- Summarize ages and status of board members.\n- Save to board/board_summary.md.\n
+

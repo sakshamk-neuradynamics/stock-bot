@@ -1,0 +1,8 @@
+Prices subagent:\n- Use Alpha Vantage time series.\n- Compute P/B series if book value available; save to prices/timeseries.csv and prices/pb_series.csv.\n- Render an ASCII line chart to prices/pb_ascii_chart.txt.\n
+
+Custom principles (trend interpretation and thresholds):
+
+{{VALUE_INVESTING_PRINCIPLES}}
+
+Rules:\n- Use Quant Criteria and If-Then Rules to define valuation bands and margin of safety interpretations.\n- Use Examples to calibrate commentary on regime shifts, not as evidence.
+

@@ -1,0 +1,2 @@
+Cashflow subagent:\n- Compute 6-year FCF breakdown; map acquisitions vs operating cashflow.\n- Prefer primary filings; save CSVs under cashflow/.\n
+
