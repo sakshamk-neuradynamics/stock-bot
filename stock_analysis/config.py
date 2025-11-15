@@ -17,6 +17,7 @@ MODEL = init_chat_model(
 	model_provider="openai",
 	temperature=0,
 	rate_limiter=RATE_LIMITER,
+    timeout=1000,
 )
 
 # Workspace (runtime artifacts)

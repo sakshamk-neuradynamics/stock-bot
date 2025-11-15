@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence
+from typing import Any, Dict, List, Sequence
 
 
-from .utils import read_prompt, inject_principles
+from .utils import read_prompt
 
 
 def build_subagents(
@@ -12,10 +12,11 @@ def build_subagents(
     mcp_tools: Sequence[Any],
     av_tools: Sequence[Any],
     web_tools: Sequence[Any],
-    principles: Optional[str],
 ) -> List[Dict[str, Any]]:
     def P(name: str) -> str:
-        return inject_principles(read_prompt(prompts_root / name), principles)
+        # Subagents do NOT receive global principles here.
+        # The main agent will pass relevant principles per task in the task input context.
+        return read_prompt(prompts_root / name)
 
     return [
         {

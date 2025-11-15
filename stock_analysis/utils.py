@@ -5,6 +5,8 @@ from pathlib import Path
 from typing import Any, Iterable, List, Optional
 
 from langchain_core.rate_limiters import InMemoryRateLimiter
+from langchain_core.tools.base import ToolException
+# (no pydantic imports needed here)
 
 
 
@@ -14,6 +16,9 @@ VALUE_PRINCIPLES_TOKEN = "{{VALUE_INVESTING_PRINCIPLES}}"
 
 def prompts_dir() -> Path:
     return Path(__file__).resolve().parent / "prompts"
+
+def templates_dir() -> Path:
+    return Path(__file__).resolve().parent / "templates"
 
 
 def read_prompt(path: Path) -> str:
@@ -60,6 +65,28 @@ def filter_tavily_tools(tools: Iterable[Any]) -> List[Any]:
     return results
 
 
+def wrap_tools_with_error_handler(tools: Iterable[Any]) -> List[Any]:
+    """Attach a validation-only error handler to Tavily tools; return exact error string; raise others."""
+    def _looks_like_validation(err: Exception) -> bool:
+        s = str(err).lower()
+        return ("validation error" in s) or ("unexpected keyword argument" in s) or ("not one of" in s)
+
+    wrapped: List[Any] = []
+    for t in tools:
+        name = getattr(t, "name", "") or ""
+        if "tavily" in name:
+            def _handler(e: Exception) -> str:
+                if isinstance(e, ToolException) and _looks_like_validation(e):
+                    return str(e)
+                raise e
+            try:
+                setattr(t, "handle_tool_error", _handler)
+            except (AttributeError, TypeError):
+                pass
+        wrapped.append(t)
+    return wrapped
+
+
 def build_rate_limiter() -> InMemoryRateLimiter:
     # Default spacing is ~17s between requests to avoid TPM 429s; override via env
     min_seconds = 17.0
@@ -75,5 +102,3 @@ def build_rate_limiter() -> InMemoryRateLimiter:
         check_every_n_seconds=0.1,
         max_bucket_size=1,
     )
-
-

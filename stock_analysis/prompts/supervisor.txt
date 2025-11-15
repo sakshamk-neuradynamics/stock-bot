@@ -4,6 +4,10 @@ Apply custom value-investing principles to planning and gating:
 
 {{VALUE_INVESTING_PRINCIPLES}}
 
+Principles delegation:
+- When creating subagent tasks, include the single most relevant principle (verbatim) for that task and add a short 1–2 sentence summary of other principles that may influence the task but are lower‑weight.
+- Do not pass the entire principles corpus to subagents; keep their context minimal and focused.
+
 Follow these rules:
 - Use Quant Criteria and If-Then Rules to define pass/fail thresholds for research completeness and valuation assumptions.
 - Use the Checklist to create and update the todo plan.
