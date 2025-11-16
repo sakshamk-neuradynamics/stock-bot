@@ -10,14 +10,15 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 # from langchain_tavily import TavilySearch  # Direct SDK; currently using Tavily MCP tools instead
 
 from . import config
-from .utils import prompts_dir, templates_dir, read_prompt, inject_principles, filter_alpha_vantage_tools, filter_tavily_tools, wrap_tools_with_error_handler
+from .utils import prompts_dir, templates_dir, read_prompt, inject_principles, filter_non_tavily_tools, filter_tavily_tools, wrap_tools_with_error_handler
 from .subagents import build_subagents
 
 async def build_agent(principles: Optional[str] = None) -> Any:
     # Collect MCP tools (dict config with per-server transport)
     mcp_client = MultiServerMCPClient(config.MCP_SERVERS)
     mcp_tools = await mcp_client.get_tools()
-    av_tools = filter_alpha_vantage_tools(mcp_tools)
+    # For now, treat "Alpha Vantage tools" as all non-Tavily tools
+    av_tools = filter_non_tavily_tools(mcp_tools)
     # Initialize Playwright browser tools (async API) compatible with running event loop
     # pw = await async_playwright().start()
     # browser = await pw.chromium.launch(headless=True)

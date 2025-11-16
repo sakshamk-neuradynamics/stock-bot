@@ -64,6 +64,12 @@ def filter_tavily_tools(tools: Iterable[Any]) -> List[Any]:
             results.append(t)
     return results
 
+def filter_non_tavily_tools(tools: Iterable[Any]) -> List[Any]:
+    """Return all tools that are not Tavily tools."""
+    tavily = filter_tavily_tools(tools)
+    tavily_ids = {id(t) for t in tavily}
+    return [t for t in tools if id(t) not in tavily_ids]
+
 
 def wrap_tools_with_error_handler(tools: Iterable[Any]) -> List[Any]:
     """Attach a validation-only error handler to Tavily tools; return exact error string; raise others."""
