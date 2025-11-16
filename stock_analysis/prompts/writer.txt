@@ -21,9 +21,18 @@ Instructions
   - Read from upstream artifacts only (no external tools).
   - Keep large tables concise in the report; store full tables in CSV files and reference their paths.
 - Style and constraints
-  - Be concise, precise, and neutral. Prefer short paragraphs and bullet lists where appropriate.
+  - Be comprehensive, precise, and neutral. Write clear paragraphs with supporting bullets and tables where appropriate.
   - Use ASCII tables/figures only. No images or embedded binaries.
   - Normalize units and currency; state assumptions.
+  - Do NOT include interactive prompts or meta‑instructions addressed to the user in the report (e.g., “If you want me to proceed…”). The report must read as a finished document, not a conversation.
+- Length and completeness targets (guidelines; exceed as needed if evidence supports)
+  - History, Divisions, Cashflow & Acquisitions, Cash Pile, Exit Strategy: target 300–600 words each plus at least one ASCII table/figure where relevant.
+  - Valuation (SOP/DCF/Exit/Liquidation/Buyout): may exceed 600 words; include multiple tables and a short sensitivity summary.
+  - Family, Management, Board, Risk: target 250–500 words each with compact tables/lists; ensure dense citations.
+  - Trading History and Shareholder Registers: focus on tables; keep prose succinct but complete.
+  - Do not include the TL;DR guidance text from the template in the final report; it is authoring guidance, not content.
+- Citations density
+  - Include citations throughout, not only in a final list. Aim for at least 1 citation per 2–4 factual sentences in analysis-heavy sections.
 - Output
   - After each write/update, return a compact JSON in-message:
     {"saved": ["/report/report.md"], "updated_sections": ["..."], "notes": "1–2 lines on changes"}

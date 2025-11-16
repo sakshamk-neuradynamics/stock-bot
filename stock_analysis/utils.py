@@ -70,6 +70,16 @@ def filter_non_tavily_tools(tools: Iterable[Any]) -> List[Any]:
     tavily_ids = {id(t) for t in tavily}
     return [t for t in tools if id(t) not in tavily_ids]
 
+def filter_out_tools_by_names(tools: Iterable[Any], names: Iterable[str]) -> List[Any]:
+    """Exclude tools whose name matches any in 'names' (case-insensitive)."""
+    name_set = {n.lower() for n in names}
+    results: List[Any] = []
+    for t in tools:
+        tname = (getattr(t, "name", "") or "").lower()
+        if tname not in name_set:
+            results.append(t)
+    return results
+
 
 def wrap_tools_with_error_handler(tools: Iterable[Any]) -> List[Any]:
     """Attach a validation-only error handler to Tavily tools; return exact error string; raise others."""

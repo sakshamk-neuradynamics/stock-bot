@@ -10,7 +10,7 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 # from langchain_tavily import TavilySearch  # Direct SDK; currently using Tavily MCP tools instead
 
 from . import config
-from .utils import prompts_dir, templates_dir, read_prompt, inject_principles, filter_non_tavily_tools, filter_tavily_tools, wrap_tools_with_error_handler
+from .utils import prompts_dir, templates_dir, read_prompt, inject_principles, filter_non_tavily_tools, filter_tavily_tools, filter_out_tools_by_names, wrap_tools_with_error_handler
 from .subagents import build_subagents
 
 async def build_agent(principles: Optional[str] = None) -> Any:
@@ -29,6 +29,8 @@ async def build_agent(principles: Optional[str] = None) -> Any:
     # web_tools = [tavily_tool]
     # Use Tavily MCP tools for web search
     web_tools = filter_tavily_tools(mcp_tools)
+    # Exclude specific Tavily tools (e.g., map) that we don't want subagents to call
+    web_tools = filter_out_tools_by_names(web_tools, names={"tavily_map"})
     # Make tool errors non-fatal so the model can self-correct
     web_tools = wrap_tools_with_error_handler(web_tools)
     # If you want to fall back to Browser MCP tools as well, use this instead:

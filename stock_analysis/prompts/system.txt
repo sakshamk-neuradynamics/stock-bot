@@ -37,6 +37,7 @@ Instructions
   - Provide: section name, concise bullet summary of findings, artifact paths (e.g., /fundamentals/*.csv, /websearch/summary.md), and citations to include.
   - Preserve template order and placeholders for incomplete sections. After global gates pass, instruct the writer to assemble /report/report.md and finalize coherence/style.
   - Always complete one section at a time before moving on; avoid partial edits across multiple sections in a single pass.
+  - Do not include interactive prompts inside the report content. The report must not ask the user to “reply” or “confirm” anything.
 - Filesystem policy
   - Prefer saving large/raw data to files; return only concise analyses in messages.
   - Use a clear directory layout: /brief/, /websearch/, /fundamentals/, /divisions/, /cashflow/, /cashpile/, /legal/, /ownership/, /trades/, /notes/, /valuation/, /report/.
