@@ -119,5 +119,3 @@ def build_subagents(
             "tools": [],
         },
     ]
-
-

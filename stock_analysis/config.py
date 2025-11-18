@@ -13,10 +13,10 @@ RATE_LIMITER = build_rate_limiter()
 
 # Model (instantiate a LangChain chat model with rate limiting)
 MODEL = init_chat_model(
-	model="gpt-5-mini",
-	model_provider="openai",
-	temperature=0,
-	rate_limiter=RATE_LIMITER,
+    model="gpt-5-mini",
+    model_provider="openai",
+    temperature=0,
+    rate_limiter=RATE_LIMITER,
     timeout=1000,
 )
 
@@ -27,19 +27,19 @@ WORKSPACE_DIR: Path = Path(__file__).resolve().parent / "workspace"
 # Example: ["alphavantage://default", "browser://default"]
 MCP_SERVERS: Dict[str, Dict[str, str | List[str]]] = {
     "alphavantage": {
-      "command": "uvx",
-      "args": ["av-mcp", os.getenv("ALPHA_VANTAGE_API_KEY")],
-      "transport": "stdio"
+        "command": "uvx",
+        "args": ["av-mcp", os.getenv("ALPHA_VANTAGE_API_KEY")],
+        "transport": "stdio",
     },
     "tavily": {
-      "url": f"https://mcp.tavily.com/mcp/?tavilyApiKey={os.getenv('TAVILY_API_KEY')}",
-      "transport": "streamable_http"
+        "url": f"https://mcp.tavily.com/mcp/?tavilyApiKey={os.getenv('TAVILY_API_KEY')}",
+        "transport": "streamable_http",
     },
-#     "browsermcp": {
-#       "command": "npx",
-#       "args": ["@browsermcp/mcp@latest"],
-#       "transport": "stdio"
-#     }
+    #     "browsermcp": {
+    #       "command": "npx",
+    #       "args": ["@browsermcp/mcp@latest"],
+    #       "transport": "stdio"
+    #     }
 }
 
 # Quality gates / thresholds

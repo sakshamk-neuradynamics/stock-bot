@@ -35,6 +35,7 @@ Instructions
   - tavily_search.time_range ∈ {'day','week','month','year','d','w','m','y'}; default 'year'. Do NOT use 'custom'.
   - tavily_extract: pass only schema‑allowed fields (e.g., url). Do NOT pass 'include_raw_content'.
   - If a tool returns a validation error string, correct parameters and retry once; else continue via an alternate authoritative source.
+  - URL batching: when handling multiple URLs, extract in batches of at most 2 URLs; split into groups of 2 and summarize between batches. De‑duplicate before batching to keep context lean.
 - Output
   - Return compact JSON:
     {"saved": ["/notes/risks.md", "/notes/risks.csv"],

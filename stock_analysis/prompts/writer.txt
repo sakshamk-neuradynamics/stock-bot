@@ -15,9 +15,11 @@ Instructions
     - Synthesize into concise prose and/or ASCII tables. Do not dump raw data; link to files if necessary.
     - Add bracketed citations [n] for claims and include a “Citations” list with URLs and ISO 8601 UTC timestamps.
     - Preserve other sections exactly; update only the targeted section(s).
-  - After all sections are complete and gates have passed, assemble the full /report/report.md and run a final pass for coherence, cross‑references, and consistent units/currency.
+  - For each section write/update, also write the section content to /report/[section].md using a lower_snake_case section slug (e.g., fundamentals.md, websearch.md, divisions.md, cashflow.md, cashpile.md, risk.md, family.md, management.md, board.md, historical_trading.md, asset_notes.md, valuation.md). Overwrite the section file with the latest version.
+  - After all sections are complete and gates have passed, assemble the full /report/report.md by stitching the section files in the template’s order and run a final pass for coherence, cross‑references, and consistent units/currency.
 - Filesystem usage
-  - Write the report to /report/report.md.
+  - Write section files to /report/[section].md as they are updated.
+  - Write the final assembled report to /report/report.md.
   - Read from upstream artifacts only (no external tools).
   - Keep large tables concise in the report; store full tables in CSV files and reference their paths.
 - Style and constraints
@@ -35,5 +37,7 @@ Instructions
   - Include citations throughout, not only in a final list. Aim for at least 1 citation per 2–4 factual sentences in analysis-heavy sections.
 - Output
   - After each write/update, return a compact JSON in-message:
-    {"saved": ["/report/report.md"], "updated_sections": ["..."], "notes": "1–2 lines on changes"}
+    {"saved": ["/report/[section].md"], "updated_sections": ["..."], "notes": "1–2 lines on changes"}
+  - After assembling the full report, return:
+    {"saved": ["/report/report.md"], "updated_sections": ["ALL"], "notes": "assembled from section files in template order"}
 

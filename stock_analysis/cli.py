@@ -57,5 +57,3 @@ if __name__ == "__main__":
     # Optional single arg: path to principles file; otherwise defaults to ./principles.txt if present
     principles_file = sys.argv[1] if len(sys.argv) > 1 else None
     asyncio.run(run(principles_file))
-
-

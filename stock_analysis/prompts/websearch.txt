@@ -19,6 +19,7 @@ Instructions
   - tavily_search: time_range must be one of {'day','week','month','year','d','w','m','y'}; default to 'month' or 'year' if unspecified. Do NOT use 'custom'.
   - tavily_extract: pass only schema-allowed fields (e.g., url). Do NOT pass 'include_raw_content'.
   - If a tool returns a validation error string, immediately correct the parameters and retry once with compliant values; otherwise continue with an alternative source or query.
+  - URL batching: when extracting content from multiple URLs, handle at most 2 URLs per batch; if more are needed, split into batches of 2 and summarize between batches. De-duplicate before batching to avoid context bloat.
 - Artifacts (filesystem)
   - Save all sources as JSONL at /websearch/sources.jsonl; each line:
     {"title": str, "url": str, "publisher": str | null, "published_at": str | null, "accessed_at": ISO8601_UTC, "summary": str | null, "type": "primary"|"secondary"}

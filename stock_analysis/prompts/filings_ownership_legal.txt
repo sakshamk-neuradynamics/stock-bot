@@ -36,6 +36,7 @@ Instructions
   - tavily_search.time_range ∈ {'day','week','month','year','d','w','m','y'}; choose 'year' for historical; do NOT use 'custom'.
   - tavily_extract: pass only schema‑allowed fields (e.g., url). Do NOT pass 'include_raw_content'.
   - If a tool returns a validation error string, correct parameters and retry once; else continue via an alternate authoritative source.
+  - URL batching: when extracting from multiple URLs, process at most 2 URLs per batch; if more are needed, split into groups of 2 and summarize between batches. De‑duplicate before batching to avoid context bloat.
 - Output
   - Return compact JSON:
     {"saved": ["legal/company_identity.json", "legal/structure.md", "ownership/holders.jsonl", "trades/insider_trades.csv", "history/corporate_actions.csv", "ownership/summary.md"],

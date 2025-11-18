@@ -27,6 +27,7 @@ Instructions
   - tavily_search.time_range ∈ {'day','week','month','year','d','w','m','y'}; default 'year'. Do NOT use 'custom'.
   - tavily_extract: pass only schema‑allowed fields (e.g., url). Do NOT pass 'include_raw_content'.
   - If a tool returns a validation error string, correct parameters and retry once; else continue via an alternate authoritative source.
+  - URL batching: when extracting from multiple URLs, handle at most 2 URLs per batch; split into groups of 2 and summarize between batches. De‑duplicate before batching to keep context lean.
 - Output
   - Return a compact JSON: {"members_count": int, "saved": ["/management/managers.jsonl", "/management/manager_summaries.md"]}.
   - Keep the in‑message response concise; store detailed content in files.

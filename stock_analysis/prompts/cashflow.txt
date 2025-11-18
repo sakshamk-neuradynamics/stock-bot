@@ -40,6 +40,7 @@ Instructions
   - tavily_search.time_range must be one of {'day','week','month','year','d','w','m','y'}; default to 'year' for historical filings; do NOT use 'custom'.
   - tavily_extract must only pass schema-allowed fields (e.g., url); do NOT pass 'include_raw_content'.
   - If a tool returns a validation error string, correct parameters and retry once; otherwise continue via alternate authoritative source.
+  - URL batching: if extracting from multiple URLs, process at most 2 URLs per batch; split into groups of 2 and summarize between batches. De‑duplicate before batching to reduce context bloat.
 - Output
   - Return a compact JSON:
     {"saved": ["/cashflow/fcf_6y.csv", "/cashflow/acq_vs_ocf_6y.csv", "/cashflow/assumptions.md", "/cashflow/summary.md"],

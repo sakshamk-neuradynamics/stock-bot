@@ -24,6 +24,7 @@ Instructions
   - tavily_search.time_range must be one of {'day','week','month','year','d','w','m','y'}; default to 'year' if unspecified. Do NOT use 'custom'.
   - tavily_extract must only pass schema-allowed fields (e.g., url). Do NOT pass 'include_raw_content'.
   - If a tool returns a validation error string, correct parameters and retry once; otherwise continue via alternate authoritative source.
+  - URL batching: if extracting from multiple URLs, process at most 2 URLs per batch; split into groups of 2 and summarize between batches. De‑duplicate before batching to minimize context bloat.
 - Output
   - Return a compact JSON: {"members_count": int, "independent_pct": float | null, "saved": ["/board/members.jsonl", "/board/board_summary.md"]}.
   - Keep the in-message response concise; store detailed content in files.

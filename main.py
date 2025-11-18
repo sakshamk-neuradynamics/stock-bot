@@ -10,11 +10,13 @@ from pathlib import Path
 from typing import Iterable, List
 import os
 from urllib.parse import urlparse, parse_qs
+import asyncio
 
 import streamlit as st
 from core_principles.graph import graph as core_graph
-from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
+from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound, CouldNotRetrieveTranscript
 from fpdf import FPDF
+from stock_analysis.agent import build_agent
 
 
 def ensure_temp_dir() -> Path:
@@ -253,14 +255,30 @@ def render_file_manager():
     count_ph.caption(f"Selected: {len(selected_names_post)}")
 
 
+def normalize_and_save_principles(principles_value) -> None:
+    """Normalize principles value and save to project-root principles.txt."""
+    if isinstance(principles_value, str):
+        items = [
+            line.strip(" -\t")
+            for line in principles_value.splitlines()
+            if line.strip()
+        ]
+    elif isinstance(principles_value, list):
+        items = [str(x).strip() for x in principles_value if str(x).strip()]
+    else:
+        items = [str(principles_value).strip()] if principles_value is not None else []
+    text = "\n".join(items).strip()
+    out_path = Path.cwd() / "principles.txt"
+    try:
+        out_path.write_text(text, encoding="utf-8")
+        st.success(f"Core principles saved to {out_path.name}.")
+    except OSError as e:
+        st.error(f"Failed to write principles.txt: {e}")
+
+
 def render_principles_extractor():
     """Render UI to run the core-principles graph and display results."""
     st.subheader("Extract Core Principles")
-
-    if "principles_result" not in st.session_state:
-        st.session_state["principles_result"] = None
-    if "prompt_result" not in st.session_state:
-        st.session_state["prompt_result"] = None
 
     investor = st.text_input(
         "Investor name",
@@ -276,42 +294,8 @@ def render_principles_extractor():
                 {"investor_name": investor.strip()},
                 config={"configurables": {"batch_size": 5}},
             )
-            # Handle possible shapes of outputs defensively
             principles_value = result_state.get("core_principles")
-            output_value = result_state.get("output", "")
-
-            st.session_state["principles_result"] = principles_value
-            st.session_state["prompt_result"] = output_value
-            st.success("Extraction complete.")
-
-    principles_value = st.session_state.get("principles_result")
-    prompt_value = st.session_state.get("prompt_result")
-
-    if principles_value is not None or prompt_value:
-        st.divider()
-
-    if principles_value is not None:
-        st.markdown("**Core Principles**")
-        # Normalize to list[str]
-        if isinstance(principles_value, str):
-            items = [
-                line.strip(" -\t")
-                for line in principles_value.splitlines()
-                if line.strip()
-            ]
-        elif isinstance(principles_value, list):
-            items = [str(x).strip() for x in principles_value if str(x).strip()]
-        else:
-            items = [str(principles_value).strip()]
-
-        # Render list and copy-friendly code block
-        for idx, item in enumerate(items, start=1):
-            st.write(f"{idx}. {item}")
-        st.code("\n".join(items))
-
-    if prompt_value:
-        st.markdown("**Generated Prompt**")
-        st.code(str(prompt_value))
+            normalize_and_save_principles(principles_value)
 
 
 def configure_hf_cache():
@@ -330,28 +314,25 @@ def configure_hf_cache():
 
 def extract_yt_video_id(url: str) -> str | None:
     """Extract YouTube video ID from common URL formats."""
-    try:
-        parsed = urlparse(url.strip())
-        if not parsed.netloc:
-            return None
-        host = parsed.netloc.lower()
-        # youtu.be/<id>
-        if "youtu.be" in host:
-            vid = parsed.path.lstrip("/").split("/")[0]
-            return vid or None
-        # youtube.com/watch?v=<id>
-        if "youtube.com" in host:
-            if parsed.path.startswith("/watch"):
-                qs = parse_qs(parsed.query or "")
-                vals = qs.get("v", [])
-                return vals[0] if vals else None
-            # youtube.com/shorts/<id>
-            if parsed.path.startswith("/shorts/"):
-                parts = parsed.path.split("/")
-                return parts[2] if len(parts) > 2 else None
+    parsed = urlparse(url.strip())
+    if not parsed.netloc:
         return None
-    except Exception:
-        return None
+    host = parsed.netloc.lower()
+    # youtu.be/<id>
+    if "youtu.be" in host:
+        vid = parsed.path.lstrip("/").split("/")[0]
+        return vid or None
+    # youtube.com/watch?v=<id>
+    if "youtube.com" in host:
+        if parsed.path.startswith("/watch"):
+            qs = parse_qs(parsed.query or "")
+            vals = qs.get("v", [])
+            return vals[0] if vals else None
+        # youtube.com/shorts/<id>
+        if parsed.path.startswith("/shorts/"):
+            parts = parsed.path.split("/")
+            return parts[2] if len(parts) > 2 else None
+    return None
 
 
 def transcript_snippets_to_text(snippets) -> str:
@@ -409,9 +390,9 @@ def save_youtube_transcripts(urls: List[str], languages: List[str] | None = None
             header = f"YouTube Transcript\nVideo ID: {vid}\nURL: {url}\n"
             write_pdf_from_text(text, out_path, header=header)
             saved.append(out_path)
-        except (TranscriptsDisabled, NoTranscriptFound):
+        except (TranscriptsDisabled, NoTranscriptFound, CouldNotRetrieveTranscript):
             st.error(f"Transcript not available for: {vid}")
-        except Exception as e:
+        except (OSError, ValueError) as e:
             st.error(f"Failed to fetch transcript for {vid}: {e}")
     return saved
 
@@ -435,6 +416,80 @@ def render_youtube_transcriber():
                 st.info("No transcripts saved.")
 
 
+def render_deep_agent_chat():
+    """Chat-style, streamed Deep Agent interface using saved principles.txt if present."""
+    st.subheader("Deep Agent Chat")
+    principles_path = Path.cwd() / "principles.txt"
+    principles_text = ""
+    if principles_path.exists():
+        try:
+            principles_text = principles_path.read_text(encoding="utf-8")
+            st.caption(f"Using principles from {principles_path.name}.")
+        except (OSError, UnicodeDecodeError) as e:
+            st.warning(f"Could not read {principles_path.name}: {e}")
+    else:
+        st.caption("No principles.txt found. The agent will run without injected principles.")
+
+    if "chat_messages" not in st.session_state:
+        st.session_state["chat_messages"] = []
+    if "deep_agent" not in st.session_state:
+        st.session_state["deep_agent"] = None
+
+    # Display history
+    for msg in st.session_state["chat_messages"]:
+        with st.chat_message(msg.get("role", "assistant")):
+            st.markdown(str(msg.get("content", "")))
+
+    user_input = st.chat_input("Ask the Deep Agent about stocks, sources, or reports...")
+    if user_input:
+        st.session_state["chat_messages"].append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        # Ensure agent exists (lazy init, cached in session)
+        if st.session_state["deep_agent"] is None:
+            with st.spinner("Initializing Deep Agent..."):
+                async def _build():
+                    return await build_agent(principles=principles_text or None)
+                try:
+                    st.session_state["deep_agent"] = asyncio.run(_build())
+                except RuntimeError:
+                    # Fallback: create a new event loop if needed (e.g., nested loop contexts)
+                    loop = asyncio.new_event_loop()
+                    try:
+                        asyncio.set_event_loop(loop)
+                        st.session_state["deep_agent"] = loop.run_until_complete(_build())
+                    finally:
+                        loop.close()
+
+        agent = st.session_state["deep_agent"]
+        with st.chat_message("assistant"):
+            placeholder = st.empty()
+
+            async def _astream(a, history, ph):
+                last_text = ""
+                async for chunk in a.astream({"messages": history}, stream_mode="values"):
+                    if "messages" in chunk:
+                        msg = chunk["messages"][-1]
+                        last_text = str(msg)
+                        ph.markdown(last_text)
+                return last_text
+
+            try:
+                last = asyncio.run(_astream(agent, st.session_state["chat_messages"], placeholder))
+            except RuntimeError:
+                # Fallback for environments with existing running loop
+                loop = asyncio.new_event_loop()
+                try:
+                    asyncio.set_event_loop(loop)
+                    last = loop.run_until_complete(_astream(agent, st.session_state["chat_messages"], placeholder))
+                finally:
+                    loop.close()
+
+        if last:
+            st.session_state["chat_messages"].append({"role": "assistant", "content": last})
+
+
 def main():
     """Streamlit app entrypoint."""
     st.set_page_config(page_title="Stock KB - File Manager", layout="wide")
@@ -453,11 +508,12 @@ def main():
         render_uploader()
         st.divider()
         render_youtube_transcriber()
+        st.divider()
+        render_principles_extractor()
     with right:
         render_file_manager()
 
-    st.divider()
-    render_principles_extractor()
+    # Deep Agent Chat moved to a separate page under pages/
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 Prompts for the core principles extracting agent.
 """
 
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 
 extract_core_principles_prompt = ChatPromptTemplate.from_messages(
     [
