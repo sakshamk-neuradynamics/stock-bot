@@ -13,11 +13,11 @@ Goal
 Instructions
 - Inputs (read only; no external tools)
   - Pull upstream artifacts from the filesystem, for example:
-    - /fundamentals/*.csv (income/balance/cashflow/ratios)
-    - /cashflow/fcf_6y.csv, /cashpile/treasury_6y.csv
-    - /divisions/segments_6y.csv, /divisions/geography_6y.csv
-    - /prices/timeseries.csv, /prices/pb_series.csv (if available)
-    - /notes/risks.csv (if present) for penalizing or adjusting assumptions
+    - fundamentals/*.csv (income/balance/cashflow/ratios)
+    - cashflow/fcf_6y.csv, cashpile/treasury_6y.csv
+    - divisions/segments_6y.csv, divisions/geography_6y.csv
+    - prices/timeseries.csv, prices/pb_series.csv (if available)
+    - notes/risks.csv (if present) for penalizing or adjusting assumptions
   - Document which files were used in /valuation/assumptions.md (with paths).
 - Scenario construction
   - Create downside/base/upside cases with explicit drivers:
@@ -37,10 +37,15 @@ Instructions
     - Case drivers (growth, margins, discount, terminal), haircuts and settlement rules for liquidation, leverage/dilution for buyout/rights
     - Limitations and key dependencies
   - Write /valuation/summary.md (<=250 words) with bullet‑point highlights and reference the produced CSV files.
+- File path safety
+  - Always use workspace‑relative paths without a leading slash when calling filesystem tools (e.g., valuation/sop_cases.csv, exit/exit_cases.csv).
+  - Never include “..” segments or traverse parent directories. Do not use absolute paths.
+  - Restrict reads/writes to: fundamentals/, cashflow/, cashpile/, divisions/, prices/, notes/, valuation/, exit/, liquidation/, buyout/.
 - Principles alignment (per task)
   - Apply any principle(s) passed in the task to constrain discount rates, growth, margins, haircuts, exit multiples, and margin‑of‑safety thresholds. Favor conservative, citable assumptions.
-- Output
-  - Return compact JSON:
-    {"saved": ["/valuation/sop_cases.csv", "/valuation/dcf.csv", "/valuation/sensitivity.csv", "/exit/exit_cases.csv", "/liquidation/liquidation_table.csv", "/buyout/buyout_rights.csv", "/valuation/assumptions.md", "/valuation/summary.md"],
+
+Output
+- Return compact JSON:
+    {"saved": ["valuation/sop_cases.csv", "valuation/dcf.csv", "valuation/sensitivity.csv", "exit/exit_cases.csv", "liquidation/liquidation_table.csv", "buyout/buyout_rights.csv", "valuation/assumptions.md", "valuation/summary.md"],
      "cases": ["downside", "base", "upside"], "notes": "1–2 lines on key drivers and conservatism"}
 

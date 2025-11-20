@@ -15,18 +15,29 @@ Instructions
     - Synthesize into concise prose and/or ASCII tables. Do not dump raw data; link to files if necessary.
     - Add bracketed citations [n] for claims and include a “Citations” list with URLs and ISO 8601 UTC timestamps.
     - Preserve other sections exactly; update only the targeted section(s).
-  - For each section write/update, also write the section content to /report/[section].md using a lower_snake_case section slug (e.g., fundamentals.md, websearch.md, divisions.md, cashflow.md, cashpile.md, risk.md, family.md, management.md, board.md, historical_trading.md, asset_notes.md, valuation.md). Overwrite the section file with the latest version.
-  - After all sections are complete and gates have passed, assemble the full /report/report.md by stitching the section files in the template’s order and run a final pass for coherence, cross‑references, and consistent units/currency.
+  - Only write ONE section per invocation. After the section is rendered:
+    - Write/overwrite the section’s per‑section file at report/[section].md (lower_snake_case slug).
+    - Use the assemble_report tool to append the rendered section to report/report.md: pass a single-element section_headings list (matching the template heading) and section_paths list (path to the section file). Do not batch multiple sections into one call.
+  - Each section file must be valid Markdown:
+    - Begin with a level-1 heading (# Section Name) that matches the template heading.
+    - Use Markdown tables/lists for structured data; avoid HTML unless necessary.
+    - Keep consistent spacing and include blank lines between paragraphs/tables.
+  - After all sections are complete and gates have passed, assemble the full report/report.md by stitching the section files in the template’s order and run a final pass for coherence, cross‑references, and consistent units/currency.
 - Filesystem usage
-  - Write section files to /report/[section].md as they are updated.
-  - Write the final assembled report to /report/report.md.
+  - Write section files to report/[section].md as they are updated (workspace‑relative path; no leading slash).
+  - Use the assemble_report tool to append each completed section to report/report.md as you go (one section per tool call). When re-editing existing sections, rebuild report/report.md by calling assemble_report with the ordered headings/paths instead of appending duplicates.
+  - Write the final assembled report to report/report.md (workspace‑relative).
   - Read from upstream artifacts only (no external tools).
   - Keep large tables concise in the report; store full tables in CSV files and reference their paths.
+  - File path safety:
+    - Do not include “..” in any path; do not traverse to parent directories.
+    - Restrict reads/writes to the report/ directory for report assembly; avoid listing parent paths.
 - Style and constraints
   - Be comprehensive, precise, and neutral. Write clear paragraphs with supporting bullets and tables where appropriate.
   - Use ASCII tables/figures only. No images or embedded binaries.
   - Normalize units and currency; state assumptions.
   - Do NOT include interactive prompts or meta‑instructions addressed to the user in the report (e.g., “If you want me to proceed…”). The report must read as a finished document, not a conversation.
+  - Do not reference “Primary/Secondary principles” or similar callouts inside sections unless the template explicitly requires it (e.g., the Title Pages “Principles rubric” block). Focus on evidence and citations instead of principle labels.
 - Length and completeness targets (guidelines; exceed as needed if evidence supports)
   - History, Divisions, Cashflow & Acquisitions, Cash Pile, Exit Strategy: target 300–600 words each plus at least one ASCII table/figure where relevant.
   - Valuation (SOP/DCF/Exit/Liquidation/Buyout): may exceed 600 words; include multiple tables and a short sensitivity summary.
@@ -37,7 +48,7 @@ Instructions
   - Include citations throughout, not only in a final list. Aim for at least 1 citation per 2–4 factual sentences in analysis-heavy sections.
 - Output
   - After each write/update, return a compact JSON in-message:
-    {"saved": ["/report/[section].md"], "updated_sections": ["..."], "notes": "1–2 lines on changes"}
+    {"saved": ["report/[section].md"], "updated_sections": ["..."], "notes": "1–2 lines on changes"}
   - After assembling the full report, return:
-    {"saved": ["/report/report.md"], "updated_sections": ["ALL"], "notes": "assembled from section files in template order"}
+    {"saved": ["report/report.md"], "updated_sections": ["ALL"], "notes": "assembled from section files in template order"}
 

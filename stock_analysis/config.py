@@ -8,16 +8,29 @@ from .utils import build_rate_limiter
 
 load_dotenv()
 
+# Financial Modeling Prep configuration
+FMP_API_KEY: str = (os.getenv("FMP_API_KEY") or "").strip()
+FMP_BASE_URL: str = os.getenv("FMP_BASE_URL", "https://financialmodelingprep.com/api")
+try:
+    FMP_HTTP_TIMEOUT: float = float(os.getenv("FMP_HTTP_TIMEOUT", "30.0"))
+except ValueError:
+    FMP_HTTP_TIMEOUT = 30.0
+
 # Shared rate limiter for the stock agent
 RATE_LIMITER = build_rate_limiter()
 
-# Model (instantiate a LangChain chat model with rate limiting)
+# Model (instantiate a LangChain chat model)
+# MODEL = init_chat_model(
+#     model="gpt-5-mini",
+#     model_provider="openai",
+#     temperature=0,
+#     rate_limiter=RATE_LIMITER,
+#     timeout=1000,
+# )
 MODEL = init_chat_model(
-    model="gpt-5-mini",
-    model_provider="openai",
+    model="gpt-oss:20b",
+    model_provider="ollama",
     temperature=0,
-    rate_limiter=RATE_LIMITER,
-    timeout=1000,
 )
 
 # Workspace (runtime artifacts)

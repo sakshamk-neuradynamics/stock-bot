@@ -6,10 +6,12 @@ from pathlib import Path
 
 import streamlit as st
 from stock_analysis.agent import build_agent
+from app_navigation import render_sidebar_nav
 
 
 def render_deep_agent_chat_page():
     st.set_page_config(page_title="Stock KB - Deep Agent Chat", layout="wide")
+    render_sidebar_nav()
     st.title("Deep Agent Chat")
     st.caption("Chat with the deep agent. Uses principles from principles.txt if available.")
 
@@ -28,16 +30,37 @@ def render_deep_agent_chat_page():
         st.session_state["chat_messages"] = []
     if "deep_agent" not in st.session_state:
         st.session_state["deep_agent"] = None
+    if "chat_running" not in st.session_state:
+        st.session_state["chat_running"] = False
+    if "chat_cancel_requested" not in st.session_state:
+        st.session_state["chat_cancel_requested"] = False
 
     for msg in st.session_state["chat_messages"]:
         with st.chat_message(msg.get("role", "assistant")):
             st.markdown(str(msg.get("content", "")))
 
-    user_input = st.chat_input("Ask the Deep Agent about stocks, sources, or reports...")
-    if user_input:
-        st.session_state["chat_messages"].append({"role": "user", "content": user_input})
+    pending_user_input: str | None = None
+    if st.session_state["chat_running"]:
+        stop_signal = st.chat_input(
+            "⏹️ Stop current chat (click send to halt)",
+            key="chat_stop_input",
+        )
+        if stop_signal is not None:
+            st.session_state["chat_cancel_requested"] = True
+            st.info("Stop requested. Finishing current response...")
+    else:
+        user_input = st.chat_input(
+            "Ask the Deep Agent about stocks, sources, or reports...",
+            key="chat_main_input",
+        )
+        pending_user_input = (user_input or "").strip()
+
+    if pending_user_input:
+        st.session_state["chat_messages"].append(
+            {"role": "user", "content": pending_user_input}
+        )
         with st.chat_message("user"):
-            st.markdown(user_input)
+            st.markdown(pending_user_input)
 
         if st.session_state["deep_agent"] is None:
             with st.spinner("Initializing Deep Agent..."):
@@ -54,18 +77,18 @@ def render_deep_agent_chat_page():
                         loop.close()
 
         agent = st.session_state["deep_agent"]
+        st.session_state["chat_running"] = True
+        last = ""
         with st.chat_message("assistant"):
             placeholder = st.empty()
 
             def _format_assistant_chunk(message_obj) -> str:
-                # Try to access content and metadata regardless of object/dict type
                 get_attr = getattr
                 content = None
                 additional = {}
                 response_meta = None
                 tool_calls = None
 
-                # Dict-like
                 if isinstance(message_obj, dict):
                     content = message_obj.get("content")
                     additional = message_obj.get("additional_kwargs", {}) or {}
@@ -77,15 +100,13 @@ def render_deep_agent_chat_page():
                     response_meta = getattr(message_obj, "response_metadata", None)
                     tool_calls = getattr(message_obj, "tool_calls", None) or additional.get("tool_calls")
 
-                # If content exists, render it directly
                 if isinstance(content, str) and content.strip():
                     return content
 
-                # Otherwise render tool_calls / planning steps
                 lines = []
                 if tool_calls:
                     lines.append("Planning tasks:")
-                    for i, tc in enumerate(tool_calls, start=1):
+                    for tc in tool_calls:
                         name = ""
                         args = {}
                         if isinstance(tc, dict):
@@ -103,10 +124,9 @@ def render_deep_agent_chat_page():
                         lines.append(title)
                         if first_line:
                             lines.append(f"  - summary: {first_line}")
-                        # Pretty print args (compact for readability)
                         try:
                             args_json = json.dumps(args, ensure_ascii=False, indent=2)[:4000]
-                        except Exception:
+                        except (TypeError, ValueError):
                             args_json = str(args)[:4000]
                         lines.append("  - args:")
                         lines.append("")
@@ -114,7 +134,6 @@ def render_deep_agent_chat_page():
                         lines.append(args_json)
                         lines.append("```")
 
-                # Include brief response metadata if present
                 if response_meta and isinstance(response_meta, dict):
                     model = response_meta.get("model_name") or response_meta.get("model")
                     tokens = response_meta.get("token_usage", {}).get("total_tokens")
@@ -130,6 +149,9 @@ def render_deep_agent_chat_page():
             async def _astream(a, history, ph):
                 last_text = ""
                 async for chunk in a.astream({"messages": history}, stream_mode="values"):
+                    if st.session_state.get("chat_cancel_requested"):
+                        ph.info("Stop requested. Halting response...")
+                        break
                     if "messages" in chunk:
                         msg = chunk["messages"][-1]
                         formatted = _format_assistant_chunk(msg)
@@ -138,17 +160,26 @@ def render_deep_agent_chat_page():
                 return last_text
 
             try:
-                last = asyncio.run(_astream(agent, st.session_state["chat_messages"], placeholder))
+                last = asyncio.run(
+                    _astream(agent, st.session_state["chat_messages"], placeholder)
+                )
             except RuntimeError:
                 loop = asyncio.new_event_loop()
                 try:
                     asyncio.set_event_loop(loop)
-                    last = loop.run_until_complete(_astream(agent, st.session_state["chat_messages"], placeholder))
+                    last = loop.run_until_complete(
+                        _astream(agent, st.session_state["chat_messages"], placeholder)
+                    )
                 finally:
                     loop.close()
+        st.session_state["chat_running"] = False
+        stop_requested = st.session_state.get("chat_cancel_requested")
+        st.session_state["chat_cancel_requested"] = False
 
-        if last:
+        if last and not stop_requested:
             st.session_state["chat_messages"].append({"role": "assistant", "content": last})
+        elif stop_requested:
+            st.info("Chat stopped before completion.")
 
 
 if __name__ == "__main__":

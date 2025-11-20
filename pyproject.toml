@@ -21,4 +21,5 @@ dependencies = [
     "lxml>=6.0.2",
     "beautifulsoup4>=4.14.2",
     "langchain-tavily>=0.2.13",
+    "langchain-ollama>=1.0.0",
 ]

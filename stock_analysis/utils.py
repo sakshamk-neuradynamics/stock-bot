@@ -161,7 +161,7 @@ def materialize_extract_payload(
         content or "", out_root, slug=slug, max_chars=max_chars
     )
     sha = hashlib.sha1((content or "").encode("utf-8")).hexdigest()
-    # Build workspace-relative POSIX paths (e.g., "/websearch/extract/.../chunk_001.md")
+    # Build workspace-relative POSIX paths (e.g., "websearch/extract/.../chunk_001.md")
     rel_paths: List[str] = []
     for p in paths:
         try:
@@ -169,9 +169,6 @@ def materialize_extract_payload(
         except ValueError:
             # Fallback to absolute, but normalize separators
             rel = p.as_posix()
-        # Ensure leading slash to denote workspace-rooted path when possible
-        if not rel.startswith("/"):
-            rel = f"/{rel}"
         rel_paths.append(rel)
 
     return {

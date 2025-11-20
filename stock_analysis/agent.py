@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import warnings
 from typing import Any, Dict, List, Optional
 from pathlib import Path
 from datetime import datetime, UTC
@@ -23,6 +24,7 @@ from .utils import (
     wrap_tools_with_error_handler,
     wrap_tools_with_extract_materializer,
 )
+from .tools import create_assemble_report_tool, create_fmp_tools
 from .subagents import build_subagents
 
 
@@ -32,6 +34,19 @@ async def build_agent(principles: Optional[str] = None) -> Any:
     mcp_tools = await mcp_client.get_tools()
     # For now, treat "Alpha Vantage tools" as all non-Tavily tools
     av_tools = filter_non_tavily_tools(mcp_tools)
+    enhanced_data_tools: List[Any] = list(av_tools)
+    try:
+        fmp_tools = create_fmp_tools(
+            api_key=config.FMP_API_KEY,
+            base_url=config.FMP_BASE_URL,
+            timeout=config.FMP_HTTP_TIMEOUT,
+        )
+        enhanced_data_tools.extend(fmp_tools)
+    except RuntimeError as exc:
+        warnings.warn(
+            f"Financial Modeling Prep tools unavailable: {exc}",
+            stacklevel=2,
+        )
     # Initialize Playwright browser tools (async API) compatible with running event loop
     # pw = await async_playwright().start()
     # browser = await pw.chromium.launch(headless=True)
@@ -78,9 +93,10 @@ async def build_agent(principles: Optional[str] = None) -> Any:
     subagents: List[Dict[str, Any]] = build_subagents(
         prompts_root=prompts_root,
         mcp_tools=mcp_tools,
-        av_tools=av_tools,
+        av_tools=enhanced_data_tools,
         web_tools=web_tools,
     )
+    assemble_report_tool = create_assemble_report_tool(config.WORKSPACE_DIR)
 
     # Append scratchpad guidance to main and subagent prompts, and ensure per-agent files
     scratch_instructions_main = (
@@ -108,6 +124,10 @@ async def build_agent(principles: Optional[str] = None) -> Any:
             "- Use concise bullet points with ISO 8601 UTC timestamps.\n"
         )
         sa_aug = dict(sa)
+        existing_tools = list(sa_aug.get("tools", []))
+        if name == "writer":
+            existing_tools = existing_tools + [assemble_report_tool]
+        sa_aug["tools"] = existing_tools
         sa_aug["system_prompt"] = f"{sa.get('system_prompt', '')}{scratch_instructions}"
         augmented_subagents.append(sa_aug)
 

@@ -23,15 +23,18 @@ Instructions
     - Parallel (safe): websearch, filings_ownership_legal, fundamentals, prices.
     - Sequential (dependent): divisions → cashflow → cashpile → risk → family/management/board → historical_trading → asset_notes → valuation → writer.
   - After each phase, check gates; if gaps remain, re-run the minimal set of subagents to close coverage/citation holes or clarify contradictions.
+  - Report assembly planning:
+    - Create explicit todo items for each report section in template order (e.g., writer: websearch, writer: divisions, writer: cashflow, writer: cashpile, writer: risk, writer: family, writer: management, writer: board, writer: historical_trading, writer: asset_notes, writer: valuation, writer: exit_strategy, writer: trading_history, writer: summary).
+    - Execute exactly one writer todo at a time. After each section is written, append that section to report/report.md and mark the todo complete before starting the next.
 - Gating and quality bars
   - Coverage gates: minimum historical years (fundamentals/prices), primary-source confirmations for identity/listing/ownership.
   - Citation gates: every factual claim in summaries/tables must trace to URLs with ISO 8601 UTC accessed timestamps.
   - Valuation gates: only allow writer to finalize the report once valuation inputs are complete and cross-checked.
 - Writer orchestration (incremental)
   - As soon as a section’s inputs exist and section-level gates pass, call the writer subagent to write/update that section only.
-  - Provide to writer: section name, concise bullets of findings, artifact paths (e.g., /fundamentals/*.csv, /websearch/summary.md), and citations to include.
-  - Maintain template order; leave placeholders for incomplete sections. After global gates pass, instruct writer to assemble /report/report.md and do a final coherence pass.
-  - Enforce “one section at a time” updates to reduce context churn and improve determinism.
+  - Provide to writer: section name, concise bullets of findings, artifact paths (e.g., fundamentals/*.csv, websearch/summary.md), and citations to include. (You may remind the writer which principle applies, but the writer should not reproduce the principle text in the report; it is guidance only.)
+  - Maintain template order; leave placeholders for incomplete sections. After global gates pass, instruct writer to assemble report/report.md and do a final coherence pass.
+  - Enforce “one section at a time” updates and append each completed section to report/report.md; if a section needs changes later, rebuild report/report.md from section files to avoid duplicates.
 - Filesystem usage
   - Use ls/read_file/write_file/edit_file to manage artifacts under workspace directories (e.g., /brief/, /fundamentals/, /divisions/, /cashflow/, /cashpile/, /ownership/, /legal/, /trades/, /websearch/, /notes/, /report/).
   - Prefer saving large/raw data to files and returning only concise summaries to keep context lean.

@@ -17,6 +17,7 @@ from core_principles.graph import graph as core_graph
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound, CouldNotRetrieveTranscript
 from fpdf import FPDF
 from stock_analysis.agent import build_agent
+from app_navigation import render_sidebar_nav
 
 
 def ensure_temp_dir() -> Path:
@@ -490,17 +491,8 @@ def render_deep_agent_chat():
             st.session_state["chat_messages"].append({"role": "assistant", "content": last})
 
 
-def main():
-    """Streamlit app entrypoint."""
-    st.set_page_config(page_title="Stock KB - File Manager", layout="wide")
-    st.title("Stock KB - Temp File Manager")
-    st.caption(
-        (
-            "Upload files to the temp directory, select, and delete "
-            "individually or in bulk."
-        )
-    )
-
+def render_data_extraction_body():
+    """Shared layout for the Data Extraction tools."""
     ensure_temp_dir()
 
     left, right = st.columns([1, 2])
@@ -513,7 +505,19 @@ def main():
     with right:
         render_file_manager()
 
-    # Deep Agent Chat moved to a separate page under pages/
+
+def main():
+    """Streamlit app entrypoint."""
+    st.set_page_config(page_title="Stock KB - Data Extraction", layout="wide")
+    render_sidebar_nav()
+    st.title("Data Extraction")
+    st.caption(
+        (
+            "Upload, transcribe, and curate source files in the temp directory "
+            "for downstream analysis."
+        )
+    )
+    render_data_extraction_body()
 
 
 if __name__ == "__main__":
