@@ -2,9 +2,6 @@ from __future__ import annotations
 
 import warnings
 from typing import Any, Dict, List, Optional
-from pathlib import Path
-from datetime import datetime, UTC
-
 from deepagents import create_deep_agent
 from deepagents.backends import FilesystemBackend
 from langchain_mcp_adapters.client import MultiServerMCPClient
@@ -21,10 +18,15 @@ from .utils import (
     filter_non_tavily_tools,
     filter_tavily_tools,
     filter_out_tools_by_names,
+    filter_out_alpha_vantage_commodities,
     wrap_tools_with_error_handler,
     wrap_tools_with_extract_materializer,
 )
-from .tools import create_assemble_report_tool, create_fmp_tools
+from .tools import (
+    create_assemble_report_tool,
+    create_chart_tools,
+    create_fmp_tools,
+)
 from .subagents import build_subagents
 
 
@@ -34,6 +36,11 @@ async def build_agent(principles: Optional[str] = None) -> Any:
     mcp_tools = await mcp_client.get_tools()
     # For now, treat "Alpha Vantage tools" as all non-Tavily tools
     av_tools = filter_non_tavily_tools(mcp_tools)
+    av_tools = filter_out_alpha_vantage_commodities(av_tools)
+    av_tools = filter_out_tools_by_names(
+        av_tools, names={"ADD_TWO_NUMBERS", "PING", "HT_PHASOR"}
+    )
+    av_tools = wrap_tools_with_extract_materializer(av_tools, config.WORKSPACE_DIR)
     enhanced_data_tools: List[Any] = list(av_tools)
     try:
         fmp_tools = create_fmp_tools(
@@ -47,6 +54,12 @@ async def build_agent(principles: Optional[str] = None) -> Any:
             f"Financial Modeling Prep tools unavailable: {exc}",
             stacklevel=2,
         )
+    enhanced_data_tools = filter_out_tools_by_names(
+        enhanced_data_tools, names={"ADD_TWO_NUMBER", "ADD_TWO_NUMBERS", "PING", "HT_PHASOR"}
+    )
+    enhanced_data_tools = wrap_tools_with_extract_materializer(
+        enhanced_data_tools, config.WORKSPACE_DIR
+    )
     # Initialize Playwright browser tools (async API) compatible with running event loop
     # pw = await async_playwright().start()
     # browser = await pw.chromium.launch(headless=True)
@@ -59,23 +72,13 @@ async def build_agent(principles: Optional[str] = None) -> Any:
     web_tools = filter_tavily_tools(mcp_tools)
     # Exclude specific Tavily tools (e.g., map) that we don't want subagents to call
     web_tools = filter_out_tools_by_names(web_tools, names={"tavily_map"})
-    # Wrap extract materializer to the web_tools
+    # Wrap extract materializer to every tool to handle large responses
     web_tools = wrap_tools_with_extract_materializer(web_tools, config.WORKSPACE_DIR)
     # Make tool errors non-fatal so the model can self-correct
     web_tools = wrap_tools_with_error_handler(web_tools)
     # If you want to fall back to Browser MCP tools as well, use this instead:
     # web_tools = filter_tavily_tools(mcp_tools) or filter_browser_tools(mcp_tools)
-
-    # Ensure scratchpad directory/files
-    scratch_dir: Path = config.WORKSPACE_DIR / "scratchpad"
-    scratch_dir.mkdir(parents=True, exist_ok=True)
-    global_scratchpad = scratch_dir / "global_scratchpad.md"
-    if not global_scratchpad.exists():
-        ts = datetime.now(UTC).isoformat(timespec="seconds") + "Z"
-        global_scratchpad.write_text(
-            f"# Global Scratchpad\n\nInitialized at {ts}\n", encoding="utf-8"
-        )
-
+    
     # Load prompts
     prompts_root = prompts_dir()
     system_prompt = inject_principles(
@@ -90,13 +93,20 @@ async def build_agent(principles: Optional[str] = None) -> Any:
         pass
 
     # Subagents (context-isolated specialists)
+    chart_tools = create_chart_tools(config.WORKSPACE_DIR)
+    chart_tools = wrap_tools_with_extract_materializer(chart_tools, config.WORKSPACE_DIR)
+
     subagents: List[Dict[str, Any]] = build_subagents(
         prompts_root=prompts_root,
         mcp_tools=mcp_tools,
         av_tools=enhanced_data_tools,
         web_tools=web_tools,
+        chart_tools=chart_tools,
     )
     assemble_report_tool = create_assemble_report_tool(config.WORKSPACE_DIR)
+    assemble_report_tool = wrap_tools_with_extract_materializer(
+        [assemble_report_tool], config.WORKSPACE_DIR
+    )[0]
 
     # Append scratchpad guidance to main and subagent prompts, and ensure per-agent files
     scratch_instructions_main = (
@@ -110,12 +120,7 @@ async def build_agent(principles: Optional[str] = None) -> Any:
     augmented_subagents: List[Dict[str, Any]] = []
     for sa in subagents:
         name = sa.get("name", "agent")
-        agent_pad = scratch_dir / f"{name}_scratchpad.md"
-        if not agent_pad.exists():
-            ts = datetime.now(UTC).isoformat(timespec="seconds") + "Z"
-            agent_pad.write_text(
-                f"# {name} Scratchpad\n\nInitialized at {ts}\n", encoding="utf-8"
-            )
+        
         scratch_instructions = (
             "\n\nScratchpad policy:\n"
             f"- Your scratchpad: scratchpad/{name}_scratchpad.md\n"

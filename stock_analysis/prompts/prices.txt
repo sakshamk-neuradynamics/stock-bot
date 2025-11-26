@@ -5,8 +5,8 @@ Goal
 - Fetch adjusted price time series for the target symbol and produce:
   - prices/timeseries.csv with standardized columns
   - prices/pb_series.csv when book value per share is available or derivable
-  - prices/pb_ascii_chart.txt with a simple ASCII chart of the P/B series (or price if P/B unavailable)
-- Provide a brief, citable summary of the period covered and any data caveats.
+- report/figures/prices_pb_trend.png (or report/figures/prices_price_trend.png) generated via the chart_line tool to visualize the latest ~2–3 years of P/B (preferred) or adjusted_close (embed the returned absolute path, not a relative one)
+- Provide a brief, self-contained summary of the period covered and any data caveats, without citations or references to other files, and list the figure path among the saved artifacts.
 
 Instructions
 - Data source and frequency
@@ -28,14 +28,17 @@ Instructions
   - Interpolate annual BVPS to the price dates using step-wise hold (carry forward until the next annual value). Compute P/B = adjusted_close / BVPS.
   - Write prices/pb_series.csv with columns:
     date, adjusted_close, bvps, pb
-  - If BVPS cannot be reliably obtained, skip this file and record a note explaining why (missing equity or shares, currency misalignment, etc.).
-- ASCII chart
-  - If P/B series exists, render a simple monospaced ASCII sparkline/line to prices/pb_ascii_chart.txt over the last ~2–3 years.
-  - Else, render an ASCII chart for adjusted_close instead.
+  - If BVPS cannot be reliably obtained, skip this file and record the reason in /notes/missing_data.md (do not mention the gap in report-bound summaries).
+- Chart rendering
+  - If P/B series exists, extract the last ~24–36 months of dates/pb values; otherwise use adjusted_close for the same window.
+  - Call the chart_line tool with matching x_values (ISO date strings) and y_values (floats). Provide a descriptive title and axis labels, and pass output_filename="prices/pb_trend.png" (or "prices/price_trend.png" when P/B is unavailable) so the PNG is saved under report/figures/prices/. When referencing the chart in Markdown, always use the absolute path returned by the tool.
+  - Capture the returned file path, confirm the PNG exists, and include it in both the saved list and notes.
 - Filesystem artifacts
   - Required: /prices/timeseries.csv
-  - Optional (if data allows): /prices/pb_series.csv, /prices/pb_ascii_chart.txt
+  - Optional (if data allows): /prices/pb_series.csv, report/figures/prices/pb_trend.png (or price_trend.png)
 - Output
   - Return a compact JSON:
-    {"saved": ["/prices/timeseries.csv", "...optional files..."], "date_range": {"start": "YYYY-MM-DD", "end": "YYYY-MM-DD"}, "notes": "1–2 lines on coverage or P/B availability"}
+    {"saved": ["/prices/timeseries.csv", "...optional files including the PNG path..."], "date_range": {"start": "YYYY-MM-DD", "end": "YYYY-MM-DD"}, "notes": "1–2 lines on coverage, P/B availability, and where the chart was saved; outputs stay citation-free"}
+
+Reminder: embed all necessary context directly into /prices/summary artifacts (if produced) and never cite other files or mention missing data in text destined for the final report.
 

@@ -10,7 +10,7 @@ load_dotenv()
 
 # Financial Modeling Prep configuration
 FMP_API_KEY: str = (os.getenv("FMP_API_KEY") or "").strip()
-FMP_BASE_URL: str = os.getenv("FMP_BASE_URL", "https://financialmodelingprep.com/api")
+FMP_BASE_URL: str = os.getenv("FMP_BASE_URL", "https://financialmodelingprep.com/stable")
 try:
     FMP_HTTP_TIMEOUT: float = float(os.getenv("FMP_HTTP_TIMEOUT", "30.0"))
 except ValueError:
@@ -20,18 +20,18 @@ except ValueError:
 RATE_LIMITER = build_rate_limiter()
 
 # Model (instantiate a LangChain chat model)
-# MODEL = init_chat_model(
-#     model="gpt-5-mini",
-#     model_provider="openai",
-#     temperature=0,
-#     rate_limiter=RATE_LIMITER,
-#     timeout=1000,
-# )
 MODEL = init_chat_model(
-    model="gpt-oss:20b",
-    model_provider="ollama",
+    model="gpt-5-mini",
+    model_provider="openai",
     temperature=0,
+    rate_limiter=RATE_LIMITER,
+    timeout=1000,
 )
+# MODEL = init_chat_model(
+#     model="gpt-oss:20b",
+#     model_provider="ollama",
+#     temperature=0,
+# )
 
 # Workspace (runtime artifacts)
 WORKSPACE_DIR: Path = Path(__file__).resolve().parent / "workspace"

@@ -5,13 +5,15 @@ import json
 from pathlib import Path
 
 import streamlit as st
-from stock_analysis.agent import build_agent
 from app_navigation import render_sidebar_nav
+from stock_analysis.agent import build_agent
+from workspace_reset import render_workspace_reset_button
 
 
 def render_deep_agent_chat_page():
     st.set_page_config(page_title="Stock KB - Deep Agent Chat", layout="wide")
     render_sidebar_nav()
+    render_workspace_reset_button()
     st.title("Deep Agent Chat")
     st.caption("Chat with the deep agent. Uses principles from principles.txt if available.")
 
@@ -79,8 +81,11 @@ def render_deep_agent_chat_page():
         agent = st.session_state["deep_agent"]
         st.session_state["chat_running"] = True
         last = ""
+        streamed_chunks: list[str] = []
         with st.chat_message("assistant"):
-            placeholder = st.empty()
+            summary_placeholder = st.empty()
+            with st.expander("Intermediate steps", expanded=False):
+                details_placeholder = st.empty()
 
             def _format_assistant_chunk(message_obj) -> str:
                 get_attr = getattr
@@ -146,40 +151,76 @@ def render_deep_agent_chat_page():
 
                 return "\n".join(lines) if lines else ""
 
-            async def _astream(a, history, ph):
+            def _render_chunk_log(chunks: list[str]) -> str:
+                body = "\n\n---\n\n".join(chunks)
+                return (
+                    "<div style='max-height:300px; overflow-y:auto; padding-right:8px;'>"
+                    f"{body}"
+                    "</div>"
+                )
+
+            async def _astream(a, history):
                 last_text = ""
+                chunk_log: list[str] = []
                 async for chunk in a.astream({"messages": history}, stream_mode="values"):
                     if st.session_state.get("chat_cancel_requested"):
-                        ph.info("Stop requested. Halting response...")
+                        details_placeholder.info("Stop requested. Halting response...")
                         break
                     if "messages" in chunk:
                         msg = chunk["messages"][-1]
                         formatted = _format_assistant_chunk(msg)
                         last_text = formatted or str(msg)
-                        ph.markdown(last_text)
-                return last_text
+                        if last_text.strip():
+                            chunk_log.append(last_text)
+                            details_placeholder.markdown(
+                                _render_chunk_log(chunk_log), unsafe_allow_html=True
+                            )
+                return last_text, chunk_log
 
-            try:
-                last = asyncio.run(
-                    _astream(agent, st.session_state["chat_messages"], placeholder)
-                )
-            except RuntimeError:
-                loop = asyncio.new_event_loop()
+            with st.spinner("Deep agent is processing..."):
                 try:
-                    asyncio.set_event_loop(loop)
-                    last = loop.run_until_complete(
-                        _astream(agent, st.session_state["chat_messages"], placeholder)
+                    last, streamed_chunks = asyncio.run(
+                        _astream(agent, st.session_state["chat_messages"])
                     )
-                finally:
-                    loop.close()
+                except RuntimeError:
+                    loop = asyncio.new_event_loop()
+                    try:
+                        asyncio.set_event_loop(loop)
+                        last, streamed_chunks = loop.run_until_complete(
+                            _astream(agent, st.session_state["chat_messages"])
+                        )
+                    finally:
+                        loop.close()
+            if last.strip():
+                summary_placeholder.markdown(last)
+            elif streamed_chunks:
+                summary_placeholder.markdown(streamed_chunks[-1])
         st.session_state["chat_running"] = False
         stop_requested = st.session_state.get("chat_cancel_requested")
         st.session_state["chat_cancel_requested"] = False
 
-        if last and not stop_requested:
-            st.session_state["chat_messages"].append({"role": "assistant", "content": last})
-        elif stop_requested:
-            st.info("Chat stopped before completion.")
+        def _record_error(err_msg: str):
+            st.session_state.setdefault("chat_messages", []).append(
+                {"role": "assistant", "content": f"**Error:** {err_msg}"}
+            )
+            st.error(err_msg)
+
+        try:
+            if streamed_chunks and not stop_requested:
+                st.session_state["chat_messages"].extend(
+                    {"role": "assistant", "content": chunk} for chunk in streamed_chunks
+                )
+            elif last and not stop_requested:
+                st.session_state["chat_messages"].append({"role": "assistant", "content": last})
+            elif stop_requested:
+                st.info("Chat stopped before completion.")
+        except Exception as exc:  # pragma: no cover - defensive guard
+            _record_error(f"Unable to store response: {exc}")
+
+    elif pending_user_input is None and st.session_state.get("chat_running"):
+        st.info("Agent is still working...")
+    elif not st.session_state["chat_messages"]:
+        st.caption("Start a conversation above to see responses here.")
 
 
 if __name__ == "__main__":

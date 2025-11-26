@@ -12,13 +12,36 @@ def build_subagents(
     mcp_tools: Sequence[Any],
     av_tools: Sequence[Any],
     web_tools: Sequence[Any],
+    chart_tools: Sequence[Any],
 ) -> List[Dict[str, Any]]:
+    _ = mcp_tools  # Placeholder for future MCP-specific tool routing.
     def P(name: str) -> str:
         # Subagents do NOT receive global principles here.
         # The main agent will pass relevant principles per task in the task input context.
         return read_prompt(prompts_root / name)
 
-    return [
+    chart_guidance = (
+        "\n\nVisualization guidance:\n"
+        "- You can call the shared chart tools (bar/line/pie) whenever visuals help.\n"
+        "- For complex diagrams or flows, emit Mermaid syntax inside ```mermaid code fences.\n"
+        "- When embedding generated charts, always use the absolute path returned by the tool (do not rewrite it to a relative path)."
+    )
+
+    def _merge_with_chart_tools(existing_tools: Sequence[Any]) -> List[Any]:
+        merged: List[Any] = list(existing_tools)
+        seen = {
+            getattr(tool, "name", "") or f"id:{id(tool)}"
+            for tool in merged
+        }
+        for tool in chart_tools:
+            key = getattr(tool, "name", "") or f"id:{id(tool)}"
+            if key in seen:
+                continue
+            merged.append(tool)
+            seen.add(key)
+        return merged
+
+    base_subagents = [
         {
             "name": "supervisor",
             "description": "Coordinator that plans, gates, and orchestrates research.",
@@ -40,9 +63,9 @@ def build_subagents(
         },
         {
             "name": "prices",
-            "description": "Get price time series and compute derived P/B and ASCII chart.",
+            "description": "Get price time series, compute derived P/B, and produce chart artifacts.",
             "system_prompt": P("prices.txt"),
-            "tools": list(av_tools),
+            "tools": list(av_tools) + list(chart_tools),
         },
         {
             "name": "filings_ownership_legal",
@@ -54,7 +77,7 @@ def build_subagents(
             "name": "divisions",
             "description": "Business divisions, product/geography mix, and trends.",
             "system_prompt": P("divisions.txt"),
-            "tools": list(web_tools),
+            "tools": list(av_tools) + list(web_tools),
         },
         {
             "name": "cashflow",
@@ -115,7 +138,13 @@ def build_subagents(
             "name": "writer",
             "description": "Assemble final report from artifacts and template.",
             "system_prompt": P("writer.txt"),
-            # Needs only FS access (provided by middleware), no MCP tools.
-            "tools": [],
+            # Needs only FS access (provided by middleware) plus charting tools.
+            "tools": list(chart_tools),
         },
     ]
+
+    for agent in base_subagents:
+        agent["tools"] = _merge_with_chart_tools(agent.get("tools", []))
+        agent["system_prompt"] = f"{agent['system_prompt']}{chart_guidance}"
+
+    return base_subagents

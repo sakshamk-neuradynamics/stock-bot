@@ -5,12 +5,24 @@ from pathlib import Path
 from typing import Any, Iterable, List, Optional, Dict
 import re
 import hashlib
+import json
 
 from langchain_core.rate_limiters import InMemoryRateLimiter
 from langchain_core.tools.base import ToolException
 from langchain_core.tools import StructuredTool
 
 VALUE_PRINCIPLES_TOKEN = "{{VALUE_INVESTING_PRINCIPLES}}"
+
+ALPHA_VANTAGE_COMMODITY_TOOL_NAMES = (
+    "natural_gas",
+    "copper",
+    "aluminum",
+    "wheat",
+    "corn",
+    "cotton",
+    "sugar",
+    "coffee",
+)
 
 
 def prompts_dir() -> Path:
@@ -70,6 +82,19 @@ def filter_non_tavily_tools(tools: Iterable[Any]) -> List[Any]:
     tavily = filter_tavily_tools(tools)
     tavily_ids = {id(t) for t in tavily}
     return [t for t in tools if id(t) not in tavily_ids]
+
+
+def filter_out_alpha_vantage_commodities(
+    tools: Iterable[Any], extra_names: Optional[Iterable[str]] = None
+) -> List[Any]:
+    """
+    Remove Alpha Vantage commodity tools that we don't want exposed to agents.
+    """
+
+    excluded = {name.lower() for name in ALPHA_VANTAGE_COMMODITY_TOOL_NAMES}
+    if extra_names:
+        excluded.update(name.lower() for name in extra_names)
+    return filter_out_tools_by_names(tools, names=excluded)
 
 
 def filter_out_tools_by_names(tools: Iterable[Any], names: Iterable[str]) -> List[Any]:
@@ -253,40 +278,91 @@ def materialize_extract_result(
 
 def wrap_tools_with_extract_materializer(tools: Iterable[Any], workspace_dir: Path, max_chars: int = 6000) -> List[Any]:
     """
-    Return a new tools list where Tavily extract tools are replaced with thin wrappers that
-    post-process outputs by materializing large payloads to files and returning small pointers.
-    This avoids mutating Pydantic tool instances (which often disallow setattr).
+    Return a new tools list where each tool response is prettified (if possible) and long payloads are
+    persisted to disk with small pointer summaries. This avoids mutating Pydantic tool instances
+    (which often disallow setattr) while still constraining LLM response size.
     """
 
-    def _is_tavily_extract(tool: Any) -> bool:
-        name = (getattr(tool, "name", "") or "").lower()
-        desc = (getattr(tool, "description", "") or "").lower()
-        text = f"{name} {desc}"
-        return "tavily" in text and "extract" in text
+    def _looks_like_extract_response(kwargs: Dict[str, Any], result: Any) -> bool:
+        if isinstance(result, dict) and isinstance(result.get("results"), list):
+            return True
+        if isinstance(result, list) and result:
+            for entry in result:
+                if isinstance(entry, dict) and entry.get("url"):
+                    return True
+        return bool(kwargs.get("urls"))
 
-    def _extract_text(result: Any) -> str:
-        if isinstance(result, dict):
-            for key in ("content", "text", "raw", "page_content"):
-                if key in result and isinstance(result[key], str):
-                    return result[key]
-        return str(result)
+    def _prettify_result_text(result: Any) -> str:
+        if isinstance(result, (dict, list)):
+            try:
+                return json.dumps(result, ensure_ascii=False, indent=2)
+            except (TypeError, ValueError):
+                return str(result)
+        if isinstance(result, str):
+            stripped = result.strip()
+            if stripped[:1] in {"{", "["}:
+                try:
+                    parsed = json.loads(result)
+                except json.JSONDecodeError:
+                    return result
+                else:
+                    try:
+                        return json.dumps(parsed, ensure_ascii=False, indent=2)
+                    except (TypeError, ValueError):
+                        return result
+            return result
+        return str(result) if result is not None else ""
 
-    def _infer_url_from_kwargs_or_result(kwargs: Dict[str, Any], result: Any) -> Optional[str]:
-        url_val = kwargs.get("url")
-        if isinstance(url_val, str) and url_val:
-            return url_val
-        if isinstance(result, dict):
-            for key in ("url", "source_url", "page_url", "href"):
-                val = result.get(key)
-                if isinstance(val, str) and val:
-                    return val
-        return None
+    def _materialize_generic(tool_name: str, content: str, workspace_dir: Path) -> Dict[str, Any]:
+        slug = _slugify_url(tool_name or "tool")
+        pointer = materialize_extract_payload(
+            url=None,
+            content=content,
+            workspace_dir=workspace_dir,
+            subdir=f"tool_outputs/{slug}",
+            max_chars=max_chars,
+        )
+        return {
+            "message": (
+                "Tool output exceeded the inline response limit. "
+                "Full content saved under `stock_analysis/workspace/{}`.".format(
+                    pointer["paths"][0] if pointer.get("paths") else "tool_outputs"
+                )
+            ),
+            "materialized": pointer,
+            "preview": (content or "")[: max_chars // 2],
+        }
+
+    def _format_tool_error(tool_name: str, exc: Exception) -> Dict[str, Any]:
+        text = str(exc).strip()
+        lowered = text.lower()
+        if "timeout" in lowered:
+            summary = "Tool request timed out. Try again or switch sources."
+        elif "connection" in lowered or "network" in lowered:
+            summary = "Tool request failed due to a connection error."
+        else:
+            summary = "Tool request failed."
+        detail = text or repr(exc)
+        return {
+            "error": summary,
+            "tool": tool_name,
+            "detail": detail[:500],
+        }
+
+    def _should_wrap_exception(exc: Exception) -> bool:
+        lowered = str(exc).lower()
+        return isinstance(exc, (TimeoutError, ConnectionError, OSError)) or "timeout" in lowered or "connection" in lowered
+
+    def _process_result(tool_name: str, kwargs: Dict[str, Any], result: Any):
+        formatted = _prettify_result_text(result)
+        if len(formatted) <= max_chars:
+            return formatted
+        if _looks_like_extract_response(kwargs, result):
+            return materialize_extract_result(kwargs, result, workspace_dir, max_chars=max_chars)
+        return _materialize_generic(tool_name, formatted, workspace_dir)
 
     wrapped: List[Any] = []
     for tool in tools:
-        if not _is_tavily_extract(tool):
-            wrapped.append(tool)
-            continue
 
         if getattr(tool, "_materialize_wrapped", False):
             wrapped.append(tool)
@@ -301,16 +377,26 @@ def wrap_tools_with_extract_materializer(tools: Iterable[Any], workspace_dir: Pa
 
         new_tool = None
         if StructuredTool is not None and (callable(orig_func) or callable(orig_coro)):
-            def wrapped_func(*, orig_func=orig_func, **kwargs):
-                result = orig_func(**kwargs) if callable(orig_func) else None
-                return materialize_extract_result(kwargs, result, workspace_dir, max_chars=max_chars)
-
-            async def wrapped_coro(*, orig_coro=orig_coro, orig_func=orig_func, **kwargs):
-                if callable(orig_coro):
-                    result = await orig_coro(**kwargs)
-                else:
+            def wrapped_func(*, orig_func=orig_func, tool_name=name, **kwargs):
+                try:
                     result = orig_func(**kwargs) if callable(orig_func) else None
-                return materialize_extract_result(kwargs, result, workspace_dir, max_chars=max_chars)
+                except Exception as exc:  # pragma: no cover - tool runtime varies
+                    if _should_wrap_exception(exc):
+                        return _format_tool_error(tool_name, exc)
+                    raise
+                return _process_result(tool_name, kwargs, result)
+
+            async def wrapped_coro(*, orig_coro=orig_coro, orig_func=orig_func, tool_name=name, **kwargs):
+                try:
+                    if callable(orig_coro):
+                        result = await orig_coro(**kwargs)
+                    else:
+                        result = orig_func(**kwargs) if callable(orig_func) else None
+                except Exception as exc:  # pragma: no cover - tool runtime varies
+                    if _should_wrap_exception(exc):
+                        return _format_tool_error(tool_name, exc)
+                    raise
+                return _process_result(tool_name, kwargs, result)
 
             try:
                 new_tool = StructuredTool(
@@ -341,7 +427,7 @@ def wrap_tools_with_extract_materializer(tools: Iterable[Any], workspace_dir: Pa
 
 def build_rate_limiter() -> InMemoryRateLimiter:
     # Default spacing is ~17s between requests to avoid TPM 429s; override via env
-    min_seconds = 17.0
+    min_seconds = 0.5
     try:
         env_val = os.getenv("OPENAI_MIN_SECONDS_BETWEEN_REQUESTS")
         if env_val:
