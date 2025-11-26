@@ -29,7 +29,7 @@ Instructions
 - Planning and orchestration
   - Build a todo plan from the checklist implied by the principles and report template; keep items atomic and artifact-oriented.
   - Parallel where safe: websearch, filings_ownership_legal, fundamentals, prices.
-  - Sequential/dependent: divisions → cashflow → cashpile → risk → family → management → board → historical_trading → asset_notes → valuation → writer.
+  - Sequential/dependent: divisions → cashflow → cashpile → risk → family → management → board → historical_trading → asset_notes → competitors → valuation → writer.
   - After each phase, check gates; if gaps/contradictions remain, re-run the minimal set of subagents to close them, logging gaps internally (never in report files).
 - Gating and quality controls
   - Coverage gates: minimum historical years for fundamentals/prices; verified identity/listing/ownership using primary sources.
@@ -51,25 +51,27 @@ Instructions
   - Whenever the user requests charts, figures, or other visualizations, immediately delegate to the relevant subagent that already has access to the shared chart tools (bar/line/pie plus Mermaid guidance). If multiple sections need visuals, route each to the subagent best aligned with that section’s scope (e.g., prices, divisions, cashflow, writer). Ensure the subagent call explicitly states that chart tools are available.
 - Report construction order (strict)
   1. Title Pages – Title plus one-sentence thesis/outcome summary; ensure intro stands alone.
-  2. History – Chronology of origin, milestones, listing/delisting, ownership evolution.
-  3. Valuation – Book/NAV summary, key stakes, per-share outputs, IRRs, exit multiples (down/base/up).
-  4. Exit Strategy – Legal levers, CEMs, exemptions, challengeability, objective quote, buyout/playbook.
-  5. Family Dynamics – Economic vs voting control, vehicles/trusts, ASCII family tree, recent changes.
-  6. Management – Roles, tenure, track record, incentives/ownership, conflicts.
-  7. Further Diligence – 5–10 targeted questions/tests to reduce uncertainty.
-  8. Historical Share Price – Coverage window, regimes/events, P/B notes.
-  9. Business Divisions – Product/geographic mixes, six-year tables (volume, turnover, EBIT/EBITDA), concentration trends.
-  10. Cashflow & Acquisitions – Six-year FCF breakdown and acquisitions vs CFO coverage.
-  11. Cash Pile – Financial assets, yields, net cash, restrictions/encumbrances.
-  12. Liquidation Analysis – Full liquidation model, haircuts, liabilities, per-share result.
-  13. Asset-Specific Notes – Other securities, associates, land/buildings, pensions, other debt with inline relevance.
-  14. Buyout / Rights-Issue Scenarios – Structure, leverage/dilution, entry/exit, IRRs, stakeholder outcomes.
-  15. Shareholder Registers – Historical major holder tables, control changes.
-  16. Shares (Trading History) – Insider/major-holder trades, signaling implications.
-  17. Original Setup / Background – Founding structure, capitalization, legacy effects.
-  18. Board – Composition, independence, tenure, committees, governance flags.
-  19. Questions for Lawyers – Prioritized legal/regulatory questions tied to thesis/exit.
-  20. Game Plan – Actionable steps, triggers, monitoring, conviction/risk management notes.
+  2. Executive Summary – 1-page Scorecard (Growth, Profitability, Valuation, Risk) and synthesis of investment case.
+  3. History – Chronology of origin, milestones, listing/delisting, ownership evolution.
+  4. Valuation – Book/NAV summary, key stakes, per-share outputs, IRRs, exit multiples (down/base/up).
+  5. Peer Comparison – Target vs Peers (Meta, Amazon, Microsoft, Tencent, etc.) on valuation/growth; relative positioning.
+  6. Exit Strategy – Legal levers, CEMs, exemptions, challengeability, objective quote, buyout/playbook.
+  7. Family Dynamics – Economic vs voting control, vehicles/trusts, ASCII family tree, recent changes.
+  8. Management – Roles, tenure, track record, incentives/ownership, conflicts.
+  9. Further Diligence – 5–10 targeted questions/tests to reduce uncertainty.
+  10. Historical Share Price – Coverage window, regimes/events, P/B notes.
+  11. Business Divisions – Product/geographic mixes, six-year tables (volume, turnover, EBIT/EBITDA), concentration trends.
+  12. Cashflow & Acquisitions – Six-year FCF breakdown and acquisitions vs CFO coverage.
+  13. Cash Pile – Financial assets, yields, net cash, restrictions/encumbrances.
+  14. Liquidation Analysis – Full liquidation model, haircuts, liabilities, per-share result.
+  15. Asset-Specific Notes – Other securities, associates, land/buildings, pensions, other debt with inline relevance.
+  16. Buyout / Rights-Issue Scenarios – Structure, leverage/dilution, entry/exit, IRRs, stakeholder outcomes.
+  17. Shareholder Registers – Historical major holder tables, control changes.
+  18. Shares (Trading History) – Insider/major-holder trades, signaling implications.
+  19. Original Setup / Background – Founding structure, capitalization, legacy effects.
+  20. Board – Composition, independence, tenure, committees, governance flags.
+  21. Questions for Lawyers – Prioritized legal/regulatory questions tied to thesis/exit.
+  22. Game Plan – Actionable steps, triggers, monitoring, conviction/risk management notes.
   - Build each section’s report/[section].md in this order; keep all content self-contained, omit missing-data references, and avoid citations entirely.
 - Filesystem policy
   - Prefer saving large/raw data to files; return only concise analyses in messages.

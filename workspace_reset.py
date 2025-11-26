@@ -51,7 +51,9 @@ def reset_workspace() -> tuple[bool, str]:
     return True, "Workspace reset complete. The workspace directory is now empty."
 
 
-def render_workspace_reset_button():
+def render_workspace_reset_button(download_button: dict | None = None):
+    DOWNLOAD_ANCHOR_ID = "workspace-download-anchor"
+
     def _inject_styles():
         if st.session_state.get(RESET_STYLE_KEY):
             return
@@ -68,6 +70,10 @@ def render_workspace_reset_button():
             #{RESET_ANCHOR_ID} ~ div[data-testid="stButton"] button:hover {{
                 background-color: #922b21 !important;
             }}
+            #{DOWNLOAD_ANCHOR_ID} ~ div[data-testid="stDownloadButton"] button {{
+                padding: 0.15rem 0.8rem !important;
+                font-size: 0.85rem !important;
+            }}
             </style>
             """,
             unsafe_allow_html=True,
@@ -80,7 +86,24 @@ def render_workspace_reset_button():
     if message:
         st.success(message)
 
-    _, button_col = st.columns([1, 0.16])
+    # Adjust columns based on whether download button is present
+    cols = st.columns([1, 0.25, 0.20]) if download_button else st.columns([1, 0.16])
+    
+    if download_button:
+        with cols[1]:
+             st.markdown(f'<div id="{DOWNLOAD_ANCHOR_ID}"></div>', unsafe_allow_html=True)
+             st.download_button(
+                label=download_button["label"],
+                data=download_button["data"],
+                file_name=download_button["file_name"],
+                mime=download_button["mime"],
+                help=download_button.get("help"),
+                key="workspace_download_btn"
+            )
+        button_col = cols[2]
+    else:
+        button_col = cols[1]
+
     with button_col:
         st.markdown(f'<div id="{RESET_ANCHOR_ID}"></div>', unsafe_allow_html=True)
         if st.button(

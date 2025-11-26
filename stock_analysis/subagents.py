@@ -128,6 +128,12 @@ def build_subagents(
             "tools": list(web_tools),
         },
         {
+            "name": "competitors",
+            "description": "Compare target against key peers (valuation, growth, margins).",
+            "system_prompt": P("competitors.txt"),
+            "tools": list(av_tools) + list(web_tools),
+        },
+        {
             "name": "valuation",
             "description": "Build SOP, liquidation, buyout/rights tables and IRRs.",
             "system_prompt": P("valuation.txt"),

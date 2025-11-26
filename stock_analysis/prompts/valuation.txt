@@ -22,6 +22,7 @@ Instructions
 - Scenario construction
   - Create downside/base/upside cases with explicit drivers:
     - Revenue growth, margins, reinvestment/Capex, working capital, tax, discount rate (WACC or proxy), terminal value method (multiple or Gordon).
+  - **Practicality Constraint**: Ensure valuation ranges are realistic and practical. Avoid excessive breadth (e.g., don't span 5x to 50x multiples without strong justification). Base the "Base Case" on the most probable outcome, not just a midpoint. Explain sensitivity drivers clearly.
   - Tie assumptions to upstream evidence (segments/geography trends, cashflow run-rates, risk register) and record qualitative rationale in assumptions.md without expecting citations in downstream reporting.
   - Where data is insufficient (e.g., DCF not appropriate), skip that table and state why inside assumptions.md; never ask the writer to mention missing data.
 - Tables and calculations

@@ -4,10 +4,12 @@ import asyncio
 import base64
 import csv
 import html
+import io
 import json
 import mimetypes
 import re
 import sys
+import zipfile
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
@@ -405,7 +407,7 @@ def trigger_rerun():
     if rerun is not None:
         rerun()
     else:  # pragma: no cover - fallback for older Streamlit
-        st.experimental_rerun()
+        st.experimental_rerun()  # type: ignore[attr-defined]
 
 
 def is_editable_suffix(suffix: str) -> bool:
@@ -611,10 +613,33 @@ def render_directory_node(directory: Path, rel_path: Path, depth: int, display_n
         render_file_entry(file_path, rel_path / file_path.name, depth + 1)
 
 
+def create_workspace_zip(directory: Path) -> bytes:
+    """Create a ZIP file of the workspace directory in memory."""
+    zip_buffer = io.BytesIO()
+    with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
+        for file_path in directory.rglob("*"):
+            if file_path.is_file():
+                archive_name = file_path.relative_to(directory)
+                zip_file.write(file_path, arcname=archive_name)
+    return zip_buffer.getvalue()
+
+
 def render_file_viewer_page():
     st.set_page_config(page_title="Stock KB - File Viewer", layout="wide")
     render_sidebar_nav()
-    render_workspace_reset_button()
+    
+    # Download Workspace ZIP logic
+    zip_bytes = create_workspace_zip(WORKSPACE_ROOT) if WORKSPACE_ROOT.exists() else None
+    download_btn = {
+        "label": "📦 Download Workspace",
+        "data": zip_bytes,
+        "file_name": "workspace_backup.zip",
+        "mime": "application/zip",
+        "help": "Download the entire workspace directory as a compressed ZIP file.",
+    }
+
+    render_workspace_reset_button(download_button=download_btn if zip_bytes else None)
+    
     st.title("Workspace File Viewer")
     st.caption(
         "Browse everything under stock_analysis/workspace and open files with a single click."
@@ -623,7 +648,7 @@ def render_file_viewer_page():
     if not WORKSPACE_ROOT.exists():
         st.warning(f"Expected folder `{ROOT_LABEL}` was not found.")
         return
-
+    
     left, right = st.columns([1, 2])
 
     with left:
