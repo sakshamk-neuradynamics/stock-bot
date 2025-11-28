@@ -8,10 +8,15 @@ import streamlit as st
 from app_navigation import render_sidebar_nav
 from stock_analysis.agent import build_agent
 from workspace_reset import render_workspace_reset_button
+from utils.playwright_setup import check_playwright_on_startup
 
 
 def render_deep_agent_chat_page():
     st.set_page_config(page_title="Stock KB - Deep Agent Chat", layout="wide")
+    
+    # Ensure Playwright Chromium is installed on startup
+    check_playwright_on_startup()
+    
     render_sidebar_nav()
     render_workspace_reset_button()
     st.title("Deep Agent Chat")

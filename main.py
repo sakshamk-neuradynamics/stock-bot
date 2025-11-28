@@ -18,6 +18,7 @@ from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, No
 from fpdf import FPDF
 from stock_analysis.agent import build_agent
 from app_navigation import render_sidebar_nav
+from utils.playwright_setup import check_playwright_on_startup
 
 
 def ensure_temp_dir() -> Path:
@@ -509,6 +510,10 @@ def render_data_extraction_body():
 def main():
     """Streamlit app entrypoint."""
     st.set_page_config(page_title="Stock KB - Data Extraction", layout="wide")
+    
+    # Ensure Playwright Chromium is installed on startup
+    check_playwright_on_startup()
+    
     render_sidebar_nav()
     st.title("Data Extraction")
     st.caption(

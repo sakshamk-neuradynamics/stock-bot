@@ -6,6 +6,7 @@ from pathlib import Path
 import streamlit as st
 
 from app_navigation import render_sidebar_nav
+from utils.playwright_setup import check_playwright_on_startup
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = PROJECT_ROOT / ".env"
@@ -76,6 +77,10 @@ def mask_key(key: str) -> str:
 
 def render_settings_page():
     st.set_page_config(page_title="Stock KB - Settings", layout="wide")
+    
+    # Ensure Playwright Chromium is installed on startup
+    check_playwright_on_startup()
+    
     render_sidebar_nav()
     
     st.title("⚙️ Settings")

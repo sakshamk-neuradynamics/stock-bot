@@ -14,7 +14,7 @@ def render_sidebar_nav():
         st.page_link(
             "pages/2_Deep_Agent_Chat.py",
             label="Deep Agent Chat",
-            icon="🤖",
+            icon="💬",
         )
         st.page_link(
             "pages/3_Settings.py",

@@ -29,6 +29,7 @@ except ImportError:  # pragma: no cover - handled at runtime with message
 
 from app_navigation import render_sidebar_nav
 from workspace_reset import render_workspace_reset_button
+from utils.playwright_setup import check_playwright_on_startup
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 WORKSPACE_ROOT = PROJECT_ROOT / "stock_analysis" / "workspace"
@@ -626,6 +627,10 @@ def create_workspace_zip(directory: Path) -> bytes:
 
 def render_file_viewer_page():
     st.set_page_config(page_title="Stock KB - File Viewer", layout="wide")
+    
+    # Ensure Playwright Chromium is installed on startup
+    check_playwright_on_startup()
+    
     render_sidebar_nav()
     
     # Download Workspace ZIP logic
